@@ -70,16 +70,14 @@
     			
             
     			
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">aboutme</a>
+    			
             
 		</nav>
 		<nav class="header-nav">
 			<div class="social">
 				
 					<a class="github" target="_blank" href="https://github.com/Qian4321" title="github"><i class="icon-github"></i></a>
-		        
-					<a class="mail" target="_blank" href="/1973078177@qq.com" title="mail"><i class="icon-mail"></i></a>
-		        
-					<a class="google" target="_blank" href="/q1973078177@gmail.com" title="google"><i class="icon-google"></i></a>
 		        
 			</div>
 		</nav>
@@ -115,10 +113,6 @@
 				<div class="social">
 					
 						<a class="github" target="_blank" href="https://github.com/Qian4321" title="github"><i class="icon-github"></i></a>
-			        
-						<a class="mail" target="_blank" href="/1973078177@qq.com" title="mail"><i class="icon-mail"></i></a>
-			        
-						<a class="google" target="_blank" href="/q1973078177@gmail.com" title="google"><i class="icon-google"></i></a>
 			        
 				</div>
 			</nav>
@@ -272,6 +266,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
+      
+      
     
     
 
@@ -279,13 +275,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">目录</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">目录</a></li>
       
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
       
         
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">aboutme</a></li>
       
         
     </ul>
@@ -374,6 +372,12 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
+    
+    	<section class="tools-section tools-section-me" q-show="aboutme">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">邮箱：1973078177@qq.com&lt;br&gt;qh1973078177@gmail.com&lt;br&gt;微信：qh1973078177&lt;br&gt;有问题可联系</div>
+  	  	
+    	</section>
     
   </div>
   
