@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-15T09:42:27.135Z</updated>
+  <updated>2019-03-15T16:17:58.743Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,20 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>postName</title>
-    <link href="http://yoursite.com/2019/03/15/postName/"/>
-    <id>http://yoursite.com/2019/03/15/postName/</id>
-    <published>2019-03-15T08:02:57.000Z</published>
-    <updated>2019-03-15T09:42:27.135Z</updated>
+    <title>R语言空间信息挖掘（一）</title>
+    <link href="http://yoursite.com/2019/03/15/R%E8%AF%AD%E8%A8%80%E7%A9%BA%E9%97%B4%E4%BF%A1%E6%81%AF%E6%8C%96%E6%8E%98%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://yoursite.com/2019/03/15/R语言空间信息挖掘（一）/</id>
+    <published>2019-03-15T12:34:23.000Z</published>
+    <updated>2019-03-15T16:17:58.743Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一-R语言空间信息挖掘简介"><a href="#一-R语言空间信息挖掘简介" class="headerlink" title="一.R语言空间信息挖掘简介"></a>一.R语言空间信息挖掘简介</h2><pre><code>R系统是一款基于统计计算和绘图的免费软件。R系统提供了许多标准的和创新的统计分析方法。在过去的10年，R语言拥有越来越多用于处理和分析空间数据的包。其中一组R开发者实现了R包sp,它新增的用于空间数据的类和方法扩展了R的功能。sp包提供了点、线、多边形和网格的类和方法，采用单组空间数据类有许多重要的优势。本实验就是基于sp包进行。</code></pre><h2 id="二-空间数据的类型"><a href="#二-空间数据的类型" class="headerlink" title="二.空间数据的类型"></a>二.空间数据的类型</h2><pre><code>空间数据有空间坐标值以及这些坐标的参照系。具体在sp包中如下：</code></pre><blockquote><ul><li>点：一个单点位置，比如全球定位系统读取的位置或地理编码；</li><li>线：有序点的集合，由直线段相连；</li><li>多边行：一个区域，由一条或以上的封闭线组成，可能含孔；</li><li>网格：点或矩形单元的集合，由<strong>规则的栅格</strong>构成。</li></ul></blockquote><pre><code>前三个是矢量数据，表示尽量精准的实体，而最后一个数据模型是栅格数据模型，表示使用规则单元铺盖的连续表面。所有的空间数据包含位置信息，可以说明位置在哪里。</code></pre><a id="more"></a><h2 id="三-R的空间数据类"><a href="#三-R的空间数据类" class="headerlink" title="三.R的空间数据类"></a>三.R的空间数据类</h2><h3 id="1-Spatial对象"><a href="#1-Spatial对象" class="headerlink" title="1.Spatial对象"></a>1.Spatial对象</h3><pre><code>    Spatial类是基类，只有两个槽(槽被指定为类中所包含成员的表示方法)，第一个是约束盒，它是一个数值坐标矩阵，拥有列名为c(&apos;min&apos;,&apos;max&apos;)的数值坐标，至少有两行，即x-轴，y-轴。第二个是定义类坐标参考的CRS类对象，默认值为NA(缺失值)。可以使用getClass方法来获取类的完整定义，包括槽的名字及其内容和类型：&gt;library(sp)&gt;getClass(&quot;Spatial&quot;)Class &quot;Spatial&quot; [package &quot;sp&quot;]Slots:Name: bbox    proj4stringClass:matrix  CRS这里的Name和Class应该是上下对应的关系。所以要创建一个Spatial类的方法：&gt; s&lt;-Spatial(bbox=m,proj4string=crs)这里的m和crs就是对应的matrix(矩阵)和CRS类(创建crs类同理可根据getClass(&quot;CRS&quot;)看参数创建)。bbox为边界。</code></pre><h3 id="2-SpatialPoints类"><a href="#2-SpatialPoints类" class="headerlink" title="2.SpatialPoints类"></a>2.SpatialPoints类</h3><pre><code>SpatialPoints类是Spatial类的第一个子类。通过使用getClass(&quot;SpatialPoints&quot;)可以看出SpatialPoints类比Spatial多了一个coords槽(坐标)，扩展后可以插入坐标矩阵。</code></pre><h4 id="2-1-方法"><a href="#2-1-方法" class="headerlink" title="2.1 方法"></a>2.1 方法</h4><pre><code>方法用来访问Spatial对象的值。</code></pre><blockquote><ul><li>bbox(<em>SpatialPoints</em>)获取空间点的边界</li><li>proj4string(<em>SpatialPoints</em>)获取或设置投影</li><li>coordinates(<em>SpatialPoints</em>)获取坐标矩阵，可以进行索引筛选。</li></ul></blockquote><h4 id="2-2-空间点数据的数据框"><a href="#2-2-空间点数据的数据框" class="headerlink" title="2.2 空间点数据的数据框"></a>2.2 空间点数据的数据框</h4><pre><code>SpatialPointDataFrame的构成如下图所示（2-2）。</code></pre><p><img src="\img\R与空间分析_img\2-2.jpg" alt="图2-2"></p>]]></content>
     
     <summary type="html">
     
+      &lt;h2 id=&quot;一-R语言空间信息挖掘简介&quot;&gt;&lt;a href=&quot;#一-R语言空间信息挖掘简介&quot; class=&quot;headerlink&quot; title=&quot;一.R语言空间信息挖掘简介&quot;&gt;&lt;/a&gt;一.R语言空间信息挖掘简介&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;R系统是一款基于统计计算和绘图的免费软件。R系统提供了许多标准的和创新的统计分析方法。在过去的10年，R语言拥有越来越多用于处理和分析空间数据的包。其中一组R开发者实现了R包sp,它新增的用于空间数据的类和方法扩展了R的功能。
+sp包提供了点、线、多边形和网格的类和方法，采用单组空间数据类有许多重要的优势。本实验就是基于sp包进行。
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;二-空间数据的类型&quot;&gt;&lt;a href=&quot;#二-空间数据的类型&quot; class=&quot;headerlink&quot; title=&quot;二.空间数据的类型&quot;&gt;&lt;/a&gt;二.空间数据的类型&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;空间数据有空间坐标值以及这些坐标的参照系。具体在sp包中如下：
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;点：一个单点位置，比如全球定位系统读取的位置或地理编码；&lt;/li&gt;
+&lt;li&gt;线：有序点的集合，由直线段相连；&lt;/li&gt;
+&lt;li&gt;多边行：一个区域，由一条或以上的封闭线组成，可能含孔；&lt;/li&gt;
+&lt;li&gt;网格：点或矩形单元的集合，由&lt;strong&gt;规则的栅格&lt;/strong&gt;构成。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;前三个是矢量数据，表示尽量精准的实体，而最后一个数据模型是栅格数据模型，表示使用规则单元铺盖的连续表面。所有的空间数据包含位置信息，可以说明位置在哪里。
+&lt;/code&gt;&lt;/pre&gt;
+    
     </summary>
     
-      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="R语言空间信息挖掘" scheme="http://yoursite.com/categories/R%E8%AF%AD%E8%A8%80%E7%A9%BA%E9%97%B4%E4%BF%A1%E6%81%AF%E6%8C%96%E6%8E%98/"/>
     
     
-      <category term="-22 -33" scheme="http://yoursite.com/tags/22-33/"/>
+      <category term="R语言" scheme="http://yoursite.com/tags/R%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="数据挖掘" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
+    
+      <category term="gis" scheme="http://yoursite.com/tags/gis/"/>
     
   </entry>
   

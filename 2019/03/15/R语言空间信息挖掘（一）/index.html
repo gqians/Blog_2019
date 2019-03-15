@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/3 | QH|Blog</title>
+  <title>R语言空间信息挖掘（一） | QH|Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="QH|Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2019/03/index.html">
+  <meta name="description" content="一.R语言空间信息挖掘简介R系统是一款基于统计计算和绘图的免费软件。R系统提供了许多标准的和创新的统计分析方法。在过去的10年，R语言拥有越来越多用于处理和分析空间数据的包。其中一组R开发者实现了R包sp,它新增的用于空间数据的类和方法扩展了R的功能。 sp包提供了点、线、多边形和网格的类和方法，采用单组空间数据类有许多重要的优势。本实验就是基于sp包进行。 二.空间数据的类型空间数据有空间坐标值">
+<meta name="keywords" content="R语言,数据挖掘,gis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R语言空间信息挖掘（一）">
+<meta property="og:url" content="http://yoursite.com/2019/03/15/R语言空间信息挖掘（一）/index.html">
 <meta property="og:site_name" content="QH|Blog">
+<meta property="og:description" content="一.R语言空间信息挖掘简介R系统是一款基于统计计算和绘图的免费软件。R系统提供了许多标准的和创新的统计分析方法。在过去的10年，R语言拥有越来越多用于处理和分析空间数据的包。其中一组R开发者实现了R包sp,它新增的用于空间数据的类和方法扩展了R的功能。 sp包提供了点、线、多边形和网格的类和方法，采用单组空间数据类有许多重要的优势。本实验就是基于sp包进行。 二.空间数据的类型空间数据有空间坐标值">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/R与空间分析_img/2-2.jpg">
+<meta property="og:updated_time" content="2019-03-15T16:17:58.743Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="QH|Blog">
+<meta name="twitter:title" content="R语言空间信息挖掘（一）">
+<meta name="twitter:description" content="一.R语言空间信息挖掘简介R系统是一款基于统计计算和绘图的免费软件。R系统提供了许多标准的和创新的统计分析方法。在过去的10年，R语言拥有越来越多用于处理和分析空间数据的包。其中一组R开发者实现了R包sp,它新增的用于空间数据的类和方法扩展了R的功能。 sp包提供了点、线、多边形和网格的类和方法，采用单组空间数据类有许多重要的优势。本实验就是基于sp包进行。 二.空间数据的类型空间数据有空间坐标值">
+<meta name="twitter:image" content="http://yoursite.com/img/R与空间分析_img/2-2.jpg">
   
     <link rel="alternative" href="/atom.xml" title="QH|Blog" type="application/atom+xml">
   
@@ -138,36 +145,70 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-R语言空间信息挖掘（一）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/15/R语言空间信息挖掘（一）/" class="archive-article-date">
-  	<time datetime="2019-03-15T12:34:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-15</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/15/R语言空间信息挖掘（一）/">R语言空间信息挖掘（一）</a>
+    <h1 class="article-title" itemprop="name">
+      R语言空间信息挖掘（一）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/03/15/R语言空间信息挖掘（一）/" class="archive-article-date">
+  	<time datetime="2019-03-15T12:34:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一-R语言空间信息挖掘简介"><a href="#一-R语言空间信息挖掘简介" class="headerlink" title="一.R语言空间信息挖掘简介"></a>一.R语言空间信息挖掘简介</h2><pre><code>R系统是一款基于统计计算和绘图的免费软件。R系统提供了许多标准的和创新的统计分析方法。在过去的10年，R语言拥有越来越多用于处理和分析空间数据的包。其中一组R开发者实现了R包sp,它新增的用于空间数据的类和方法扩展了R的功能。
+sp包提供了点、线、多边形和网格的类和方法，采用单组空间数据类有许多重要的优势。本实验就是基于sp包进行。
+</code></pre><h2 id="二-空间数据的类型"><a href="#二-空间数据的类型" class="headerlink" title="二.空间数据的类型"></a>二.空间数据的类型</h2><pre><code>空间数据有空间坐标值以及这些坐标的参照系。具体在sp包中如下：
+</code></pre><blockquote>
+<ul>
+<li>点：一个单点位置，比如全球定位系统读取的位置或地理编码；</li>
+<li>线：有序点的集合，由直线段相连；</li>
+<li>多边行：一个区域，由一条或以上的封闭线组成，可能含孔；</li>
+<li>网格：点或矩形单元的集合，由<strong>规则的栅格</strong>构成。</li>
+</ul>
+</blockquote>
+<pre><code>前三个是矢量数据，表示尽量精准的实体，而最后一个数据模型是栅格数据模型，表示使用规则单元铺盖的连续表面。所有的空间数据包含位置信息，可以说明位置在哪里。
+</code></pre><a id="more"></a>
+<h2 id="三-R的空间数据类"><a href="#三-R的空间数据类" class="headerlink" title="三.R的空间数据类"></a>三.R的空间数据类</h2><h3 id="1-Spatial对象"><a href="#1-Spatial对象" class="headerlink" title="1.Spatial对象"></a>1.Spatial对象</h3><pre><code>    Spatial类是基类，只有两个槽(槽被指定为类中所包含成员的表示方法)，第一个是约束盒，它是一个数值坐标矩阵，拥有列名为c(&apos;min&apos;,&apos;max&apos;)的数值坐标，至少有两行，即x-轴，y-轴。第二个是定义类坐标参考的CRS类对象，默认值为NA(缺失值)。可以使用getClass方法来获取类的完整定义，包括槽的名字及其内容和类型：
+&gt;library(sp)
+&gt;getClass(&quot;Spatial&quot;)
+Class &quot;Spatial&quot; [package &quot;sp&quot;]
+Slots:
+Name: bbox    proj4string
+Class:matrix  CRS
+
+这里的Name和Class应该是上下对应的关系。所以要创建一个Spatial类的方法：
+&gt; s&lt;-Spatial(bbox=m,proj4string=crs)
+
+这里的m和crs就是对应的matrix(矩阵)和CRS类(创建crs类同理可根据getClass(&quot;CRS&quot;)看参数创建)。bbox为边界。
+</code></pre><h3 id="2-SpatialPoints类"><a href="#2-SpatialPoints类" class="headerlink" title="2.SpatialPoints类"></a>2.SpatialPoints类</h3><pre><code>SpatialPoints类是Spatial类的第一个子类。通过使用getClass(&quot;SpatialPoints&quot;)可以看出SpatialPoints类比Spatial多了一个coords槽(坐标)，扩展后可以插入坐标矩阵。
+</code></pre><h4 id="2-1-方法"><a href="#2-1-方法" class="headerlink" title="2.1 方法"></a>2.1 方法</h4><pre><code>方法用来访问Spatial对象的值。
+</code></pre><blockquote>
+<ul>
+<li>bbox(<em>SpatialPoints</em>)获取空间点的边界</li>
+<li>proj4string(<em>SpatialPoints</em>)获取或设置投影</li>
+<li>coordinates(<em>SpatialPoints</em>)获取坐标矩阵，可以进行索引筛选。</li>
+</ul>
+</blockquote>
+<h4 id="2-2-空间点数据的数据框"><a href="#2-2-空间点数据的数据框" class="headerlink" title="2.2 空间点数据的数据框"></a>2.2 空间点数据的数据框</h4><pre><code>SpatialPointDataFrame的构成如下图所示（2-2）。
+</code></pre><p><img src="\img\R与空间分析_img\2-2.jpg" alt="图2-2"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -187,7 +228,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -200,17 +241,94 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/15/R语言空间信息挖掘（一）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -233,8 +351,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
