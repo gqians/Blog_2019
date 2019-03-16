@@ -8,19 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>R语言空间信息挖掘（一） | QH|Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一.R语言空间信息挖掘简介R系统是一款基于统计计算和绘图的免费软件。R系统提供了许多标准的和创新的统计分析方法。在过去的10年，R语言拥有越来越多用于处理和分析空间数据的包。其中一组R开发者实现了R包sp,它新增的用于空间数据的类和方法扩展了R的功能。 sp包提供了点、线、多边形和网格的类和方法，采用单组空间数据类有许多重要的优势。本实验就是基于sp包进行。 二.空间数据的类型空间数据有空间坐标值">
+  <meta name="description" content="一.R语言空间信息挖掘简介R系统是一款基于统计计算和绘图的免费软件。R系统提供了许多标准的和创新的统计分析方法。在过去的10年，R语言拥有越来越多用于处理和分析空间数据的包。其中一组R开发者实现了R包sp,它新增的用于空间数据的类和方法扩展了R的功能。sp包提供了点、线、多边形和网格的类和方法，采用单组空间数据类有许多重要的优势。本实验就是基于sp包进行。">
 <meta name="keywords" content="R语言,数据挖掘,gis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="R语言空间信息挖掘（一）">
 <meta property="og:url" content="http://yoursite.com/2019/03/15/R语言空间信息挖掘（一）/index.html">
 <meta property="og:site_name" content="QH|Blog">
-<meta property="og:description" content="一.R语言空间信息挖掘简介R系统是一款基于统计计算和绘图的免费软件。R系统提供了许多标准的和创新的统计分析方法。在过去的10年，R语言拥有越来越多用于处理和分析空间数据的包。其中一组R开发者实现了R包sp,它新增的用于空间数据的类和方法扩展了R的功能。 sp包提供了点、线、多边形和网格的类和方法，采用单组空间数据类有许多重要的优势。本实验就是基于sp包进行。 二.空间数据的类型空间数据有空间坐标值">
+<meta property="og:description" content="一.R语言空间信息挖掘简介R系统是一款基于统计计算和绘图的免费软件。R系统提供了许多标准的和创新的统计分析方法。在过去的10年，R语言拥有越来越多用于处理和分析空间数据的包。其中一组R开发者实现了R包sp,它新增的用于空间数据的类和方法扩展了R的功能。sp包提供了点、线、多边形和网格的类和方法，采用单组空间数据类有许多重要的优势。本实验就是基于sp包进行。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/img/R与空间分析_img/2-2.jpg">
-<meta property="og:updated_time" content="2019-03-15T16:17:58.743Z">
+<meta property="og:image" content="http://yoursite.com/img/R与空间分析_img/3.jpg">
+<meta property="og:updated_time" content="2019-03-16T02:28:22.894Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="R语言空间信息挖掘（一）">
-<meta name="twitter:description" content="一.R语言空间信息挖掘简介R系统是一款基于统计计算和绘图的免费软件。R系统提供了许多标准的和创新的统计分析方法。在过去的10年，R语言拥有越来越多用于处理和分析空间数据的包。其中一组R开发者实现了R包sp,它新增的用于空间数据的类和方法扩展了R的功能。 sp包提供了点、线、多边形和网格的类和方法，采用单组空间数据类有许多重要的优势。本实验就是基于sp包进行。 二.空间数据的类型空间数据有空间坐标值">
+<meta name="twitter:description" content="一.R语言空间信息挖掘简介R系统是一款基于统计计算和绘图的免费软件。R系统提供了许多标准的和创新的统计分析方法。在过去的10年，R语言拥有越来越多用于处理和分析空间数据的包。其中一组R开发者实现了R包sp,它新增的用于空间数据的类和方法扩展了R的功能。sp包提供了点、线、多边形和网格的类和方法，采用单组空间数据类有许多重要的优势。本实验就是基于sp包进行。">
 <meta name="twitter:image" content="http://yoursite.com/img/R与空间分析_img/2-2.jpg">
   
     <link rel="alternative" href="/atom.xml" title="QH|Blog" type="application/atom+xml">
@@ -165,9 +166,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一-R语言空间信息挖掘简介"><a href="#一-R语言空间信息挖掘简介" class="headerlink" title="一.R语言空间信息挖掘简介"></a>一.R语言空间信息挖掘简介</h2><pre><code>R系统是一款基于统计计算和绘图的免费软件。R系统提供了许多标准的和创新的统计分析方法。在过去的10年，R语言拥有越来越多用于处理和分析空间数据的包。其中一组R开发者实现了R包sp,它新增的用于空间数据的类和方法扩展了R的功能。
-sp包提供了点、线、多边形和网格的类和方法，采用单组空间数据类有许多重要的优势。本实验就是基于sp包进行。
-</code></pre><h2 id="二-空间数据的类型"><a href="#二-空间数据的类型" class="headerlink" title="二.空间数据的类型"></a>二.空间数据的类型</h2><pre><code>空间数据有空间坐标值以及这些坐标的参照系。具体在sp包中如下：
+        <h2 id="一-R语言空间信息挖掘简介"><a href="#一-R语言空间信息挖掘简介" class="headerlink" title="一.R语言空间信息挖掘简介"></a>一.R语言空间信息挖掘简介</h2><pre><code>R系统是一款基于统计计算和绘图的免费软件。R系统提供了许多标准的和创新的统计分析方法。在过去的10年，R语言拥有越来越多用于处理和分析空间数据的包。其中一组R开发者实现了R包sp,它新增的用于空间数据的类和方法扩展了R的功能。sp包提供了点、线、多边形和网格的类和方法，采用单组空间数据类有许多重要的优势。本实验就是基于sp包进行。
+</code></pre><a id="more"></a>
+<h2 id="二-空间数据的类型"><a href="#二-空间数据的类型" class="headerlink" title="二.空间数据的类型"></a>二.空间数据的类型</h2><pre><code>空间数据有空间坐标值以及这些坐标的参照系。具体在sp包中如下：
 </code></pre><blockquote>
 <ul>
 <li>点：一个单点位置，比如全球定位系统读取的位置或地理编码；</li>
@@ -177,15 +178,13 @@ sp包提供了点、线、多边形和网格的类和方法，采用单组空间
 </ul>
 </blockquote>
 <pre><code>前三个是矢量数据，表示尽量精准的实体，而最后一个数据模型是栅格数据模型，表示使用规则单元铺盖的连续表面。所有的空间数据包含位置信息，可以说明位置在哪里。
-</code></pre><a id="more"></a>
-<h2 id="三-R的空间数据类"><a href="#三-R的空间数据类" class="headerlink" title="三.R的空间数据类"></a>三.R的空间数据类</h2><h3 id="1-Spatial对象"><a href="#1-Spatial对象" class="headerlink" title="1.Spatial对象"></a>1.Spatial对象</h3><pre><code>    Spatial类是基类，只有两个槽(槽被指定为类中所包含成员的表示方法)，第一个是约束盒，它是一个数值坐标矩阵，拥有列名为c(&apos;min&apos;,&apos;max&apos;)的数值坐标，至少有两行，即x-轴，y-轴。第二个是定义类坐标参考的CRS类对象，默认值为NA(缺失值)。可以使用getClass方法来获取类的完整定义，包括槽的名字及其内容和类型：
+</code></pre><h2 id="三-R的空间数据类"><a href="#三-R的空间数据类" class="headerlink" title="三.R的空间数据类"></a>三.R的空间数据类</h2><h3 id="1-Spatial对象"><a href="#1-Spatial对象" class="headerlink" title="1.Spatial对象"></a>1.Spatial对象</h3><pre><code>    Spatial类是基类，只有两个槽(槽被指定为类中所包含成员的表示方法)，第一个是约束盒，它是一个数值坐标矩阵，拥有列名为c(&apos;min&apos;,&apos;max&apos;)的数值坐标，至少有两行，即x-轴，y-轴。第二个是定义类坐标参考的CRS类对象，默认值为NA(缺失值)。可以使用getClass方法来获取类的完整定义，包括槽的名字及其内容和类型：
 &gt;library(sp)
 &gt;getClass(&quot;Spatial&quot;)
 Class &quot;Spatial&quot; [package &quot;sp&quot;]
 Slots:
 Name: bbox    proj4string
 Class:matrix  CRS
-
 这里的Name和Class应该是上下对应的关系。所以要创建一个Spatial类的方法：
 &gt; s&lt;-Spatial(bbox=m,proj4string=crs)
 
@@ -201,6 +200,9 @@ Class:matrix  CRS
 </blockquote>
 <h4 id="2-2-空间点数据的数据框"><a href="#2-2-空间点数据的数据框" class="headerlink" title="2.2 空间点数据的数据框"></a>2.2 空间点数据的数据框</h4><pre><code>SpatialPointDataFrame的构成如下图所示（2-2）。
 </code></pre><p><img src="\img\R与空间分析_img\2-2.jpg" alt="图2-2"></p>
+<pre><code>这个类扩展了SpatialPoints，继承了Spatial类对象所包含的信息。在一个data.frame对象中数据框信息保存在data槽中。
+</code></pre><h3 id="3-SpatialLines和SpatialPolygons"><a href="#3-SpatialLines和SpatialPolygons" class="headerlink" title="3.SpatialLines和SpatialPolygons"></a>3.SpatialLines和SpatialPolygons</h3><pre><code>关于这两个类与SpatialPoints类相似，其组成如图3所示
+</code></pre><p><img src="\img\R与空间分析_img\3.jpg" alt="图3"></p>
 
       
 
@@ -419,14 +421,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-R语言 -数据挖掘 -gis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">R语言 数据挖掘 gis</a>
-              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">R语言</a>
