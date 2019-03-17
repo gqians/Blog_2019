@@ -18,7 +18,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://www.qds.fun/img/R与空间分析_img/3-1.jpeg">
 <meta property="og:image" content="http://www.qds.fun/img/R与空间分析_img/3-5-1.jpeg">
-<meta property="og:updated_time" content="2019-03-17T11:38:31.978Z">
+<meta property="og:updated_time" content="2019-03-17T11:39:58.739Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="R语言空间信息挖掘（三）">
 <meta name="twitter:description" content="一.实验要求经过前面的学习，我觉得我可以完成老师所布置的第一次作业了。这次的作业要求大概如下：老师提供csv文件，其中格式为    uid gpa 4月1日 4月2日     15 3.45 34 37   18 2.45  33">
@@ -277,7 +277,7 @@ sp&lt;-SpatialPointsDataFrame(cds,cd[4])
 sp1&lt;-as(sp,&quot;SpatialPixelsDataFrame&quot;)#强制转化为SpatialPixelsDataFrame
 rw.colors&lt;-colorRampPalette(c(&quot;grey&quot;,&quot;red&quot;))
 spplot(sp1,col.regions=rw.colors(17))#绘制核密度图形
-</code></pre><p>   最终结果如下图所示：<br>   <img src="\img\R与空间分析_img\3-5-1.jpeg" alt="图3-5-1 空间网格可视化"></p>
+</code></pre><p>   最终结果如下图所示：<br>   <img src="\img\R与空间分析_img\3-5-1.jpeg" alt="图3-5-1 核聚类展示"></p>
 
       
 
