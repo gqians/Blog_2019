@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://www.qds.fun">
   <title>R语言空间信息挖掘（三） | QH|Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一.实验要求经过前面的学习，我觉得我可以完成老师所布置的第一次作业了。这次的作业要求大概如下：老师提供csv文件，其中格式为    uid gpa 4月1日 4月2日     15 3.45 34 37   18 2.45  33    大致意思就是记录该学号(uid)在某天某节课上课时坐的位置编号，gpa为成绩。实验的目的就是通过可视化计算出gpa比较好的同学在教室里是聚集分布还是均匀分布或是随">
+  <meta name="description" content="一.实验要求经过前面的学习，我觉得我可以完成老师所布置的第一次作业了。这次的作业要求大概如下：老师提供csv文件，其中格式为    uid gpa 4月1日 4月2日     15 3.45 34 37   18 2.45  33">
 <meta name="keywords" content="R语言,数据挖掘,gis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="R语言空间信息挖掘（三）">
 <meta property="og:url" content="http://www.qds.fun/2019/03/16/R语言空间信息挖掘（三）/index.html">
 <meta property="og:site_name" content="QH|Blog">
-<meta property="og:description" content="一.实验要求经过前面的学习，我觉得我可以完成老师所布置的第一次作业了。这次的作业要求大概如下：老师提供csv文件，其中格式为    uid gpa 4月1日 4月2日     15 3.45 34 37   18 2.45  33    大致意思就是记录该学号(uid)在某天某节课上课时坐的位置编号，gpa为成绩。实验的目的就是通过可视化计算出gpa比较好的同学在教室里是聚集分布还是均匀分布或是随">
+<meta property="og:description" content="一.实验要求经过前面的学习，我觉得我可以完成老师所布置的第一次作业了。这次的作业要求大概如下：老师提供csv文件，其中格式为    uid gpa 4月1日 4月2日     15 3.45 34 37   18 2.45  33">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://www.qds.fun/img/R与空间分析_img/3-1.jpeg">
 <meta property="og:image" content="http://www.qds.fun/img/R与空间分析_img/3-5-1.jpg">
-<meta property="og:updated_time" content="2019-03-17T11:29:06.477Z">
+<meta property="og:updated_time" content="2019-03-17T11:34:00.900Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="R语言空间信息挖掘（三）">
-<meta name="twitter:description" content="一.实验要求经过前面的学习，我觉得我可以完成老师所布置的第一次作业了。这次的作业要求大概如下：老师提供csv文件，其中格式为    uid gpa 4月1日 4月2日     15 3.45 34 37   18 2.45  33    大致意思就是记录该学号(uid)在某天某节课上课时坐的位置编号，gpa为成绩。实验的目的就是通过可视化计算出gpa比较好的同学在教室里是聚集分布还是均匀分布或是随">
+<meta name="twitter:description" content="一.实验要求经过前面的学习，我觉得我可以完成老师所布置的第一次作业了。这次的作业要求大概如下：老师提供csv文件，其中格式为    uid gpa 4月1日 4月2日     15 3.45 34 37   18 2.45  33">
 <meta name="twitter:image" content="http://www.qds.fun/img/R与空间分析_img/3-1.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="QH|Blog" type="application/atom+xml">
@@ -191,6 +191,7 @@
 </tr>
 </tbody>
 </table>
+<a id="more"></a>
 <pre><code>大致意思就是记录该学号(uid)在某天某节课上课时坐的位置编号，gpa为成绩。实验的目的就是通过可视化计算出gpa比较好的同学在教室里是聚集分布还是均匀分布或是随机分布。
 </code></pre><h3 id="二-实验思路"><a href="#二-实验思路" class="headerlink" title="二.实验思路"></a>二.实验思路</h3><h4 id="1-导入数据，进行数据的预处理，即是将本节课没有来的同学去除掉。"><a href="#1-导入数据，进行数据的预处理，即是将本节课没有来的同学去除掉。" class="headerlink" title="1.导入数据，进行数据的预处理，即是将本节课没有来的同学去除掉。"></a>1.导入数据，进行数据的预处理，即是将本节课没有来的同学去除掉。</h4><h4 id="2-进行数据处理，将座位编号转化为在二维上的点坐标。"><a href="#2-进行数据处理，将座位编号转化为在二维上的点坐标。" class="headerlink" title="2.进行数据处理，将座位编号转化为在二维上的点坐标。"></a>2.进行数据处理，将座位编号转化为在二维上的点坐标。</h4><h4 id="3-将生成的二维坐标与uid-gpa联系起来生成SpatialPointDataFrame。"><a href="#3-将生成的二维坐标与uid-gpa联系起来生成SpatialPointDataFrame。" class="headerlink" title="3.将生成的二维坐标与uid,gpa联系起来生成SpatialPointDataFrame。"></a>3.将生成的二维坐标与uid,gpa联系起来生成SpatialPointDataFrame。</h4><h4 id="4-将SpatialPointDataFrame转化为SpatialPixelsDataFrame，然后进行绘图。"><a href="#4-将SpatialPointDataFrame转化为SpatialPixelsDataFrame，然后进行绘图。" class="headerlink" title="4.将SpatialPointDataFrame转化为SpatialPixelsDataFrame，然后进行绘图。"></a>4.将SpatialPointDataFrame转化为SpatialPixelsDataFrame，然后进行绘图。</h4><h4 id="5-分别采用样方法和聚类法进行分析。"><a href="#5-分别采用样方法和聚类法进行分析。" class="headerlink" title="5.分别采用样方法和聚类法进行分析。"></a>5.分别采用样方法和聚类法进行分析。</h4><h3 id="三-具体实验步骤-代码"><a href="#三-具体实验步骤-代码" class="headerlink" title="三.具体实验步骤(代码)"></a>三.具体实验步骤(代码)</h3><h4 id="1-定义变量，便于后期修改数据"><a href="#1-定义变量，便于后期修改数据" class="headerlink" title="1.定义变量，便于后期修改数据"></a>1.定义变量，便于后期修改数据</h4><pre><code>library(sp)
 #定义变量
