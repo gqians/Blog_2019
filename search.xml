@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>webpack arcgis api for js</title>
+      <link href="/2019/03/18/webpack-arcgis-api-for-js/"/>
+      <url>/2019/03/18/webpack-arcgis-api-for-js/</url>
+      
+        <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;将arcgis api for js 与webpack结合起来对于我来说确实比较难，但其中dojo也要承担大部分的责任。arcgis api for js采用dojo进行开发，但我感觉dojo也快不行了，在webpack中水土不服。估计Esri也感觉不好意思，开发了esri-loader来进行辅助。这里采用的也是esri-loader。</p><h2 id="一-使用步骤"><a href="#一-使用步骤" class="headerlink" title="一.使用步骤"></a>一.使用步骤</h2><h3 id="1-安装依赖包"><a href="#1-安装依赖包" class="headerlink" title="1.安装依赖包"></a>1.安装依赖包</h3><ul><li>esri-loader(关键包)</li><li>express(框架)</li><li>http-proxy-middleware(node来处理跨域的包，究极好用)</li><li><p>babel全家桶(处理es6代码)</p><h3 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;在webpack的entry文件中导入esri-loader包。</p><p> import esriLoader from ‘esri-loader’;<br>然后加载在线的js api和css文件，这里建议将js api 布置在本地，避免一些不必要的麻烦。关于将js api布置在本地可以参考这一篇博客：<a href="https://blog.csdn.net/qq_35117024/article/details/82633084" target="_blank" rel="noopener">本地部署</a>。部署完了可以参考以下代码加载</p><p> esriLoader.loadCss(‘<a href="http://127.0.0.1:3001/arcgis_js_api/library/4.9/esri/css/main.css&#39;)" target="_blank" rel="noopener">http://127.0.0.1:3001/arcgis_js_api/library/4.9/esri/css/main.css&#39;)</a>;<br> const options = {<br>  url:’<a href="http://127.0.0.1:3001/arcgis_js_api/library/4.9/dojo/dojo.js&#39;" target="_blank" rel="noopener">http://127.0.0.1:3001/arcgis_js_api/library/4.9/dojo/dojo.js&#39;</a><br> };<br>加载完毕后就可以进行开发了。</p><h3 id="3-开发"><a href="#3-开发" class="headerlink" title="3.开发"></a>3.开发</h3><h4 id="3-1-js部分代码"><a href="#3-1-js部分代码" class="headerlink" title="3.1 js部分代码"></a>3.1 js部分代码</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;代码如下：</p><p> esriLoader.loadModules([</p><pre><code>&quot;esri/Map&quot;,&quot;esri/Ground&quot;,&quot;esri/layers/ElevationLayer&quot;,&quot;esri/config&quot;,&quot;esri/views/SceneView&quot;,&quot;esri/geometry/Extent&quot;,&quot;dojo/domReady&quot;],options).then(([Map,Ground,ElevationLayer,esriConfig,SceneView,Extent]) =&gt; {    esriConfig.request.corsEnabledServers.push(&quot;localhost:6080&quot;);//设   置地图服务器已允许跨域    var customElevation = ElevationLayer({        url: &quot;http://localhost:6080/arcgis/rest/services//SiChuan/suining/MapServer&quot;    });    var map = new Map({        // basemap: &quot;streets&quot;,//ESRI提供的底 图        basemap: &quot;hybrid&quot;,//ESRI提供的影像图        //  ground: &quot;world-elevation&quot;//ESRI提供的全球地形        ground: new Ground({            layers: [ customElevation ]        })    });    var view=new SceneView({        map:map,        container: &quot;viewDiv&quot;    });    view.ui.remove(&quot;attribution&quot;);//移除底部ESRI logo    view.when(function () {        view.goTo({            position: {                x: 113.642578125,                y: 34.7222900390625,                z: 700,                spatialReference: {                    wkid: 4326                }            },            heading: 50,            tilt: 80        }, {            speedFactor: 0.7        });    }).catch(function (reason) {        console.log(reason)})</code></pre><p> }).catch(err =&gt; {<br> // handle any script or module loading errors<br> console.error(err);<br> });<br>可以看出它的使用代码和原始的使用方法差不多，只是有一些加载上的不同。然后就可以愉快的打包了。</p><h4 id="3-2-html部分代码"><a href="#3-2-html部分代码" class="headerlink" title="3.2 html部分代码"></a>3.2 html部分代码</h4><p> &lt;!DOCTYPE html&gt;<br> <html xmlns="http://www.w3.org/1999/xhtml"><br> <head><meta name="generator" content="Hexo 3.8.0"><br> <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head></html></p><pre><code>&lt;title&gt;第一个地图应用&lt;/title&gt;&lt;style&gt;html,body,#viewDiv {padding: 0;margin: 0;height: 100%;width: 100%;}&lt;/style&gt;</code></pre><p> <br> <body></body></p><pre><code>&lt;script src=&quot;/javascripts/bundle.js&quot;&gt;&lt;/script&gt;&lt;div id=&quot;viewDiv&quot; &gt;&lt;/div&gt;</code></pre><p> <br> <br>Tips:注意这里的id和css代码，别搞错了。bundle.js是打包生成的文件，要放在boby标签里。</p><h4 id="3-3-关于跨域的问题"><a href="#3-3-关于跨域的问题" class="headerlink" title="3.3 关于跨域的问题"></a>3.3 关于跨域的问题</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;我开始也是想在布置本地api的时候就按照网上的解决方法设置跨域，但弄了很久，经历了从入门到放弃。然后决定直接在后端进行转发，而使用node.js的express的中间件http-proxy-middleware就十分方便了。这个中间件的用处十分强大，在这里就只使用它的一小部分功能。</p><p> let proxy = require(‘http-proxy-middleware’);<br> let apiProxyJs = proxy({target: ‘<a href="http://192.168.0.104/&#39;,changeOrigin" target="_blank" rel="noopener">http://192.168.0.104/&#39;,changeOrigin</a> : true});<br> app.use(‘/arcgis_js_api’, apiProxyJs);<br>大概意思就是请求的url里面路径是’/arcgis_js_api’开头的，都改变它的主机。我这里就的http请求是’<a href="http://127.0.0.1:3001/arcgis_js_api/library/4.9/dojo/dojo.js&#39;，经过转发就是&#39;http://http://192.168.0.104/arcgis_js_api/library/4.9/dojo/dojo.js&#39;。使用的时候要变成自己的路径。" target="_blank" rel="noopener">http://127.0.0.1:3001/arcgis_js_api/library/4.9/dojo/dojo.js&#39;，经过转发就是&#39;http://http://192.168.0.104/arcgis_js_api/library/4.9/dojo/dojo.js&#39;。使用的时候要变成自己的路径。</a></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> arcgis api for js </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> webpack </tag>
+            
+            <tag> webgis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>我</title>
       <link href="/2019/03/17/%E6%88%91/"/>
       <url>/2019/03/17/%E6%88%91/</url>
