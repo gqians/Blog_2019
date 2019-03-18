@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://www.qds.fun">
   <title>webpack arcgis api for js | QH|Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;将arcgis api for js 与webpack结合起来对于我来说确实比较难，但其中dojo也要承担大部分的责任。arcgis api for js采用dojo进行开发，但我感觉dojo也快不行了，在webpack中水土不服。估计Esri也感觉不好意思，开发了esri-loader来进行辅助。这里采用的也是esri-loader。 一.使用步骤">
+  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;将arcgis api for js 与webpack结合起来对于我来说确实比较难，但其中dojo也要承担大部分的责任。arcgis api for js采用dojo进行开发，但我感觉dojo也快不行了，在webpack中水土不服。估计Esri也感觉不好意思，开发了esri-loader来进行辅助。这里采用的也是esri-loader。">
 <meta name="keywords" content="webpack,webgis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack arcgis api for js">
 <meta property="og:url" content="http://www.qds.fun/2019/03/18/webpack-arcgis-api-for-js/index.html">
 <meta property="og:site_name" content="QH|Blog">
-<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;将arcgis api for js 与webpack结合起来对于我来说确实比较难，但其中dojo也要承担大部分的责任。arcgis api for js采用dojo进行开发，但我感觉dojo也快不行了，在webpack中水土不服。估计Esri也感觉不好意思，开发了esri-loader来进行辅助。这里采用的也是esri-loader。 一.使用步骤">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;将arcgis api for js 与webpack结合起来对于我来说确实比较难，但其中dojo也要承担大部分的责任。arcgis api for js采用dojo进行开发，但我感觉dojo也快不行了，在webpack中水土不服。估计Esri也感觉不好意思，开发了esri-loader来进行辅助。这里采用的也是esri-loader。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-18T04:05:39.694Z">
+<meta property="og:updated_time" content="2019-03-18T04:11:57.112Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack arcgis api for js">
-<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;将arcgis api for js 与webpack结合起来对于我来说确实比较难，但其中dojo也要承担大部分的责任。arcgis api for js采用dojo进行开发，但我感觉dojo也快不行了，在webpack中水土不服。估计Esri也感觉不好意思，开发了esri-loader来进行辅助。这里采用的也是esri-loader。 一.使用步骤">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;将arcgis api for js 与webpack结合起来对于我来说确实比较难，但其中dojo也要承担大部分的责任。arcgis api for js采用dojo进行开发，但我感觉dojo也快不行了，在webpack中水土不服。估计Esri也感觉不好意思，开发了esri-loader来进行辅助。这里采用的也是esri-loader。">
   
     <link rel="alternative" href="/atom.xml" title="QH|Blog" type="application/atom+xml">
   
@@ -163,7 +163,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;将arcgis api for js 与webpack结合起来对于我来说确实比较难，但其中dojo也要承担大部分的责任。arcgis api for js采用dojo进行开发，但我感觉dojo也快不行了，在webpack中水土不服。估计Esri也感觉不好意思，开发了esri-loader来进行辅助。这里采用的也是esri-loader。</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;将arcgis api for js 与webpack结合起来对于我来说确实比较难，但其中dojo也要承担大部分的责任。arcgis api for js采用dojo进行开发，但我感觉dojo也快不行了，在webpack中水土不服。估计Esri也感觉不好意思，开发了esri-loader来进行辅助。这里采用的也是esri-loader。<br><a id="more"></a></p>
 <h2 id="一-使用步骤"><a href="#一-使用步骤" class="headerlink" title="一.使用步骤"></a>一.使用步骤</h2><h3 id="1-安装依赖包"><a href="#1-安装依赖包" class="headerlink" title="1.安装依赖包"></a>1.安装依赖包</h3><ul>
 <li>esri-loader(关键包)</li>
 <li>express(框架)</li>
@@ -236,7 +236,7 @@ width: 100%;
 &lt;/div&gt;
 </code></pre><p> <br> <br>Tips:注意这里的id和css代码，别搞错了。bundle.js是打包生成的文件，要放在boby标签里。</p>
 <h4 id="3-3-关于跨域的问题"><a href="#3-3-关于跨域的问题" class="headerlink" title="3.3 关于跨域的问题"></a>3.3 关于跨域的问题</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;我开始也是想在布置本地api的时候就按照网上的解决方法设置跨域，但弄了很久，经历了从入门到放弃。然后决定直接在后端进行转发，而使用node.js的express的中间件http-proxy-middleware就十分方便了。这个中间件的用处十分强大，在这里就只使用它的一小部分功能。</p>
-<p> let proxy = require(‘http-proxy-middleware’);<br> let apiProxyJs = proxy({target: ‘<a href="http://192.168.0.104/&#39;,changeOrigin" target="_blank" rel="noopener">http://192.168.0.104/&#39;,changeOrigin</a> : true});<br> app.use(‘/arcgis_js_api’, apiProxyJs);<br>大概意思就是请求的url里面路径是’/arcgis_js_api’开头的，都改变它的主机。我这里就的http请求是’<a href="http://127.0.0.1:3001/arcgis_js_api/library/4.9/dojo/dojo.js&#39;，经过转发就是&#39;http://http://192.168.0.104/arcgis_js_api/library/4.9/dojo/dojo.js&#39;。使用的时候要变成自己的路径。" target="_blank" rel="noopener">http://127.0.0.1:3001/arcgis_js_api/library/4.9/dojo/dojo.js&#39;，经过转发就是&#39;http://http://192.168.0.104/arcgis_js_api/library/4.9/dojo/dojo.js&#39;。使用的时候要变成自己的路径。</a></p>
+<p> let app = express();<br> let proxy = require(‘http-proxy-middleware’);<br> let apiProxyJs = proxy({target: ‘<a href="http://192.168.0.104/&#39;,changeOrigin" target="_blank" rel="noopener">http://192.168.0.104/&#39;,changeOrigin</a> : true});<br> app.use(‘/arcgis_js_api’, apiProxyJs);<br>大概意思就是请求的url里面路径是’/arcgis_js_api’开头的，都改变它的主机。我这里就的http请求是’<a href="http://127.0.0.1:3001/arcgis_js_api/library/4.9/dojo/dojo.js&#39;，经过转发就是&#39;http://http://192.168.0.104/arcgis_js_api/library/4.9/dojo/dojo.js&#39;。使用的时候要变成自己的路径。" target="_blank" rel="noopener">http://127.0.0.1:3001/arcgis_js_api/library/4.9/dojo/dojo.js&#39;，经过转发就是&#39;http://http://192.168.0.104/arcgis_js_api/library/4.9/dojo/dojo.js&#39;。使用的时候要变成自己的路径。</a><br>(完结撒花)</p>
 </li>
 </ul>
 
