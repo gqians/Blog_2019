@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://www.qds.fun/"/>
+  <link href="http://www.qds.ink/"/>
   <updated>2019-03-18T04:25:33.312Z</updated>
-  <id>http://www.qds.fun/</id>
+  <id>http://www.qds.ink/</id>
   
   <author>
     <name>大帅</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>webpack arcgis api for js</title>
-    <link href="http://www.qds.fun/2019/03/18/webpack-arcgis-api-for-js/"/>
-    <id>http://www.qds.fun/2019/03/18/webpack-arcgis-api-for-js/</id>
+    <link href="http://www.qds.ink/2019/03/18/webpack-arcgis-api-for-js/"/>
+    <id>http://www.qds.ink/2019/03/18/webpack-arcgis-api-for-js/</id>
     <published>2019-03-18T02:14:26.000Z</published>
     <updated>2019-03-18T04:25:33.312Z</updated>
     
@@ -31,19 +31,19 @@
     
     </summary>
     
-      <category term="arcgis api for js" scheme="http://www.qds.fun/categories/arcgis-api-for-js/"/>
+      <category term="arcgis api for js" scheme="http://www.qds.ink/categories/arcgis-api-for-js/"/>
     
     
-      <category term="webpack" scheme="http://www.qds.fun/tags/webpack/"/>
+      <category term="webpack" scheme="http://www.qds.ink/tags/webpack/"/>
     
-      <category term="webgis" scheme="http://www.qds.fun/tags/webgis/"/>
+      <category term="webgis" scheme="http://www.qds.ink/tags/webgis/"/>
     
   </entry>
   
   <entry>
     <title>我</title>
-    <link href="http://www.qds.fun/2019/03/17/%E6%88%91/"/>
-    <id>http://www.qds.fun/2019/03/17/我/</id>
+    <link href="http://www.qds.ink/2019/03/17/%E6%88%91/"/>
+    <id>http://www.qds.ink/2019/03/17/我/</id>
     <published>2019-03-17T12:56:10.000Z</published>
     <updated>2019-03-18T14:45:07.251Z</updated>
     
@@ -55,15 +55,15 @@
     
     </summary>
     
-      <category term="随笔" scheme="http://www.qds.fun/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://www.qds.ink/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
   </entry>
   
   <entry>
     <title>R语言空间信息挖掘（三）</title>
-    <link href="http://www.qds.fun/2019/03/16/R%E8%AF%AD%E8%A8%80%E7%A9%BA%E9%97%B4%E4%BF%A1%E6%81%AF%E6%8C%96%E6%8E%98%EF%BC%88%E4%B8%89%EF%BC%89/"/>
-    <id>http://www.qds.fun/2019/03/16/R语言空间信息挖掘（三）/</id>
+    <link href="http://www.qds.ink/2019/03/16/R%E8%AF%AD%E8%A8%80%E7%A9%BA%E9%97%B4%E4%BF%A1%E6%81%AF%E6%8C%96%E6%8E%98%EF%BC%88%E4%B8%89%EF%BC%89/"/>
+    <id>http://www.qds.ink/2019/03/16/R语言空间信息挖掘（三）/</id>
     <published>2019-03-16T11:27:33.000Z</published>
     <updated>2019-03-17T13:20:49.630Z</updated>
     
@@ -99,21 +99,21 @@
     
     </summary>
     
-      <category term="R语言空间信息挖掘" scheme="http://www.qds.fun/categories/R%E8%AF%AD%E8%A8%80%E7%A9%BA%E9%97%B4%E4%BF%A1%E6%81%AF%E6%8C%96%E6%8E%98/"/>
+      <category term="R语言空间信息挖掘" scheme="http://www.qds.ink/categories/R%E8%AF%AD%E8%A8%80%E7%A9%BA%E9%97%B4%E4%BF%A1%E6%81%AF%E6%8C%96%E6%8E%98/"/>
     
     
-      <category term="R语言" scheme="http://www.qds.fun/tags/R%E8%AF%AD%E8%A8%80/"/>
+      <category term="R语言" scheme="http://www.qds.ink/tags/R%E8%AF%AD%E8%A8%80/"/>
     
-      <category term="数据挖掘" scheme="http://www.qds.fun/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
+      <category term="数据挖掘" scheme="http://www.qds.ink/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
     
-      <category term="gis" scheme="http://www.qds.fun/tags/gis/"/>
+      <category term="gis" scheme="http://www.qds.ink/tags/gis/"/>
     
   </entry>
   
   <entry>
     <title>R语言空间信息挖掘（二）</title>
-    <link href="http://www.qds.fun/2019/03/16/R%E8%AF%AD%E8%A8%80%E7%A9%BA%E9%97%B4%E4%BF%A1%E6%81%AF%E6%8C%96%E6%8E%98%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
-    <id>http://www.qds.fun/2019/03/16/R语言空间信息挖掘（二）/</id>
+    <link href="http://www.qds.ink/2019/03/16/R%E8%AF%AD%E8%A8%80%E7%A9%BA%E9%97%B4%E4%BF%A1%E6%81%AF%E6%8C%96%E6%8E%98%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>http://www.qds.ink/2019/03/16/R语言空间信息挖掘（二）/</id>
     <published>2019-03-16T02:57:59.000Z</published>
     <updated>2019-03-17T13:20:49.713Z</updated>
     
@@ -126,23 +126,23 @@
     
     </summary>
     
-      <category term="R语言空间信息挖掘" scheme="http://www.qds.fun/categories/R%E8%AF%AD%E8%A8%80%E7%A9%BA%E9%97%B4%E4%BF%A1%E6%81%AF%E6%8C%96%E6%8E%98/"/>
+      <category term="R语言空间信息挖掘" scheme="http://www.qds.ink/categories/R%E8%AF%AD%E8%A8%80%E7%A9%BA%E9%97%B4%E4%BF%A1%E6%81%AF%E6%8C%96%E6%8E%98/"/>
     
     
-      <category term="R语言" scheme="http://www.qds.fun/tags/R%E8%AF%AD%E8%A8%80/"/>
+      <category term="R语言" scheme="http://www.qds.ink/tags/R%E8%AF%AD%E8%A8%80/"/>
     
-      <category term="数据挖掘" scheme="http://www.qds.fun/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
+      <category term="数据挖掘" scheme="http://www.qds.ink/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
     
-      <category term="gis" scheme="http://www.qds.fun/tags/gis/"/>
+      <category term="gis" scheme="http://www.qds.ink/tags/gis/"/>
     
-      <category term="可视化" scheme="http://www.qds.fun/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+      <category term="可视化" scheme="http://www.qds.ink/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>R语言空间信息挖掘（一）</title>
-    <link href="http://www.qds.fun/2019/03/15/R%E8%AF%AD%E8%A8%80%E7%A9%BA%E9%97%B4%E4%BF%A1%E6%81%AF%E6%8C%96%E6%8E%98%EF%BC%88%E4%B8%80%EF%BC%89/"/>
-    <id>http://www.qds.fun/2019/03/15/R语言空间信息挖掘（一）/</id>
+    <link href="http://www.qds.ink/2019/03/15/R%E8%AF%AD%E8%A8%80%E7%A9%BA%E9%97%B4%E4%BF%A1%E6%81%AF%E6%8C%96%E6%8E%98%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://www.qds.ink/2019/03/15/R语言空间信息挖掘（一）/</id>
     <published>2019-03-15T12:34:23.000Z</published>
     <updated>2019-03-16T02:28:22.894Z</updated>
     
@@ -155,14 +155,14 @@
     
     </summary>
     
-      <category term="R语言空间信息挖掘" scheme="http://www.qds.fun/categories/R%E8%AF%AD%E8%A8%80%E7%A9%BA%E9%97%B4%E4%BF%A1%E6%81%AF%E6%8C%96%E6%8E%98/"/>
+      <category term="R语言空间信息挖掘" scheme="http://www.qds.ink/categories/R%E8%AF%AD%E8%A8%80%E7%A9%BA%E9%97%B4%E4%BF%A1%E6%81%AF%E6%8C%96%E6%8E%98/"/>
     
     
-      <category term="R语言" scheme="http://www.qds.fun/tags/R%E8%AF%AD%E8%A8%80/"/>
+      <category term="R语言" scheme="http://www.qds.ink/tags/R%E8%AF%AD%E8%A8%80/"/>
     
-      <category term="数据挖掘" scheme="http://www.qds.fun/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
+      <category term="数据挖掘" scheme="http://www.qds.ink/tags/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
     
-      <category term="gis" scheme="http://www.qds.fun/tags/gis/"/>
+      <category term="gis" scheme="http://www.qds.ink/tags/gis/"/>
     
   </entry>
   
