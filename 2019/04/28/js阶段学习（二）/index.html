@@ -9,18 +9,18 @@
   <link rel="dns-prefetch" href="http://www.qds.ink">
   <title>js阶段学习（二） | QH|Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="二.函数上下文和&amp;amp;执行上下文&amp;amp;作用域1.函数上下文函数上下文就是常见的this,this的值是可变的，在调用函数的时候才能确定this的值。而函数的调用也很多种方式，对应的this取值规则也都不一样。 1.1 通过函数直接调用无论是函数声明还是函数表达式，如果是作为函数被直接调用，那么它的函数上下文是windows,在严格模式下是undefined。 1.2 作为方法被调用当函数被">
+  <meta name="description" content="二.函数上下文和&amp;amp;执行上下文&amp;amp;作用域1.函数上下文函数上下文就是常见的this,this的值是可变的，在调用函数的时候才能确定this的值。而函数的调用也很多种方式，对应的this取值规则也都不一样。">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js阶段学习（二）">
 <meta property="og:url" content="http://www.qds.ink/2019/04/28/js阶段学习（二）/index.html">
 <meta property="og:site_name" content="QH|Blog">
-<meta property="og:description" content="二.函数上下文和&amp;amp;执行上下文&amp;amp;作用域1.函数上下文函数上下文就是常见的this,this的值是可变的，在调用函数的时候才能确定this的值。而函数的调用也很多种方式，对应的this取值规则也都不一样。 1.1 通过函数直接调用无论是函数声明还是函数表达式，如果是作为函数被直接调用，那么它的函数上下文是windows,在严格模式下是undefined。 1.2 作为方法被调用当函数被">
+<meta property="og:description" content="二.函数上下文和&amp;amp;执行上下文&amp;amp;作用域1.函数上下文函数上下文就是常见的this,this的值是可变的，在调用函数的时候才能确定this的值。而函数的调用也很多种方式，对应的this取值规则也都不一样。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-28T09:19:07.922Z">
+<meta property="og:updated_time" content="2019-04-28T09:20:53.057Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js阶段学习（二）">
-<meta name="twitter:description" content="二.函数上下文和&amp;amp;执行上下文&amp;amp;作用域1.函数上下文函数上下文就是常见的this,this的值是可变的，在调用函数的时候才能确定this的值。而函数的调用也很多种方式，对应的this取值规则也都不一样。 1.1 通过函数直接调用无论是函数声明还是函数表达式，如果是作为函数被直接调用，那么它的函数上下文是windows,在严格模式下是undefined。 1.2 作为方法被调用当函数被">
+<meta name="twitter:description" content="二.函数上下文和&amp;amp;执行上下文&amp;amp;作用域1.函数上下文函数上下文就是常见的this,this的值是可变的，在调用函数的时候才能确定this的值。而函数的调用也很多种方式，对应的this取值规则也都不一样。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -171,7 +171,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="二-函数上下文和-amp-执行上下文-amp-作用域"><a href="#二-函数上下文和-amp-执行上下文-amp-作用域" class="headerlink" title="二.函数上下文和&amp;执行上下文&amp;作用域"></a>二.函数上下文和&amp;执行上下文&amp;作用域</h2><h3 id="1-函数上下文"><a href="#1-函数上下文" class="headerlink" title="1.函数上下文"></a>1.函数上下文</h3><p>函数上下文就是常见的this,this的值是可变的，在调用函数的时候才能确定this的值。而函数的调用也很多种方式，对应的this取值规则也都不一样。</p>
+        <h2 id="二-函数上下文和-amp-执行上下文-amp-作用域"><a href="#二-函数上下文和-amp-执行上下文-amp-作用域" class="headerlink" title="二.函数上下文和&amp;执行上下文&amp;作用域"></a>二.函数上下文和&amp;执行上下文&amp;作用域</h2><h3 id="1-函数上下文"><a href="#1-函数上下文" class="headerlink" title="1.函数上下文"></a>1.函数上下文</h3><p>函数上下文就是常见的this,this的值是可变的，在调用函数的时候才能确定this的值。而函数的调用也很多种方式，对应的this取值规则也都不一样。<br><a id="more"></a></p>
 <h4 id="1-1-通过函数直接调用"><a href="#1-1-通过函数直接调用" class="headerlink" title="1.1 通过函数直接调用"></a>1.1 通过函数直接调用</h4><p>无论是函数声明还是函数表达式，如果是作为函数被直接调用，那么它的函数上下文是windows,在严格模式下是undefined。</p>
 <h4 id="1-2-作为方法被调用"><a href="#1-2-作为方法被调用" class="headerlink" title="1.2 作为方法被调用"></a>1.2 作为方法被调用</h4><p>当函数被当做对象的属性被调用时，此时的函数上下文指的就是调用函数对象。</p>
 <h4 id="1-3-作为构造函数调用"><a href="#1-3-作为构造函数调用" class="headerlink" title="1.3 作为构造函数调用"></a>1.3 作为构造函数调用</h4><p>1）构造函数如果返回的是非对象类型，则直接忽略返回值，将创建得函数作为函数上下文。<br>2）构造函数返回的是对象，则将返回的对象作为整个表达式的值返回，传入的this无效。</p>
