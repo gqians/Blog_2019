@@ -13,4 +13,4 @@ Disallow: /vendors/
 Disallow: /fancybox/
 
 Sitemap: http://www.qds.ink/sitemap.xml
-Sitemap: http://www.qds,ink/baidusitemap.xml
+Sitemap: http://www.qds.ink/baidusitemap.xml
