@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://www.qds.ink/img/js/maopao.gif">
 <meta property="og:image" content="http://www.qds.ink/img/js/selection.gif">
 <meta property="og:image" content="http://www.qds.ink/img/js/insertion.gif">
-<meta property="og:updated_time" content="2019-06-12T02:48:04.155Z">
+<meta property="og:updated_time" content="2019-06-12T02:49:43.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="可视化排序（一）">
 <meta name="twitter:description" content="一.大体介绍使用的排序算法包含冒泡排序，选择排序，插入排序，归并排序，快速排序，堆排序，使用echart实现部分排序的可视化排序过程，因为部分排序方法可视化太复杂。二.冒泡排序1.冒泡排序的主要思想是通过二重for循环，循环比较相邻两项，按照统一的大小排列顺序进行交换位置，性能较差，复杂度为      O(n^2)。2.代码实现1）可视化方面选用echart的柱状图。2）因为要将每一个排序后的数组">
@@ -177,7 +177,20 @@
       
         <h3 id="一-大体介绍"><a href="#一-大体介绍" class="headerlink" title="一.大体介绍"></a>一.大体介绍</h3><h4 id="使用的排序算法包含冒泡排序，选择排序，插入排序，归并排序，快速排序，堆排序，使用echart实现部分排序的可视化排序过程，因为部分排序方法可视化太复杂。"><a href="#使用的排序算法包含冒泡排序，选择排序，插入排序，归并排序，快速排序，堆排序，使用echart实现部分排序的可视化排序过程，因为部分排序方法可视化太复杂。" class="headerlink" title="使用的排序算法包含冒泡排序，选择排序，插入排序，归并排序，快速排序，堆排序，使用echart实现部分排序的可视化排序过程，因为部分排序方法可视化太复杂。"></a>使用的排序算法包含冒泡排序，选择排序，插入排序，归并排序，快速排序，堆排序，使用echart实现部分排序的可视化排序过程，因为部分排序方法可视化太复杂。</h4><h3 id="二-冒泡排序"><a href="#二-冒泡排序" class="headerlink" title="二.冒泡排序"></a>二.冒泡排序</h3><h4 id="1-冒泡排序的主要思想是通过二重for循环，循环比较相邻两项，按照统一的大小排列顺序进行交换位置，性能较差，复杂度为-O-n-2-。"><a href="#1-冒泡排序的主要思想是通过二重for循环，循环比较相邻两项，按照统一的大小排列顺序进行交换位置，性能较差，复杂度为-O-n-2-。" class="headerlink" title="1.冒泡排序的主要思想是通过二重for循环，循环比较相邻两项，按照统一的大小排列顺序进行交换位置，性能较差，复杂度为      O(n^2)。"></a>1.冒泡排序的主要思想是通过二重for循环，循环比较相邻两项，按照统一的大小排列顺序进行交换位置，性能较差，复杂度为      O(n^2)。</h4><h4 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2.代码实现"></a>2.代码实现</h4><h5 id="1）可视化方面选用echart的柱状图。"><a href="#1）可视化方面选用echart的柱状图。" class="headerlink" title="1）可视化方面选用echart的柱状图。"></a>1）可视化方面选用echart的柱状图。</h5><h5 id="2）因为要将每一个排序后的数组状态保存下来，形成一个动态的动画效果，就可以使用Generator和yield配合setInterval来进行实现。"><a href="#2）因为要将每一个排序后的数组状态保存下来，形成一个动态的动画效果，就可以使用Generator和yield配合setInterval来进行实现。" class="headerlink" title="2）因为要将每一个排序后的数组状态保存下来，形成一个动态的动画效果，就可以使用Generator和yield配合setInterval来进行实现。"></a>2）因为要将每一个排序后的数组状态保存下来，形成一个动态的动画效果，就可以使用Generator和yield配合setInterval来进行实现。</h5><a id="more"></a>
 <h4 id="3-动图展示"><a href="#3-动图展示" class="headerlink" title="3.动图展示"></a>3.动图展示</h4><p><img src="\img\js\maopao.gif" alt="图1"></p>
-<h4 id="4-部分代码"><a href="#4-部分代码" class="headerlink" title="4.部分代码"></a>4.部分代码</h4><p>使用的vue框架，完整代码在 <a href="https://github.com/Qian4321/sort-v" target="_blank" rel="noopener">https://github.com/Qian4321/sort-v</a><br>    const bubble = function* (array) {<br>      let length = array.length;<br>      for (let i = 0; i &lt; length; i++) {<br>        for (let j = 0; j &lt; length - 1-i; j++) {<br>          if (array[j] &gt; array[j + 1]) {<br>            [array[j], array[j + 1]] = [array[j + 1], array[j]];<br>            yield array;<br>          }<br>        }<br>      }<br>    }<br>    export default bubble;<br>调用代码：</p>
+<h4 id="4-部分代码"><a href="#4-部分代码" class="headerlink" title="4.部分代码"></a>4.部分代码</h4><p>使用的vue框架，完整代码在 <a href="https://github.com/Qian4321/sort-v" target="_blank" rel="noopener">https://github.com/Qian4321/sort-v</a></p>
+<pre><code>const bubble = function* (array) {
+  let length = array.length;
+  for (let i = 0; i &lt; length; i++) {
+    for (let j = 0; j &lt; length - 1-i; j++) {
+      if (array[j] &gt; array[j + 1]) {
+        [array[j], array[j + 1]] = [array[j + 1], array[j]];
+        yield array;
+      }
+    }
+  }
+}
+export default bubble;
+</code></pre><p>调用代码：</p>
 <pre><code>bubble_click(){
     let chart = bar.myChart(&quot;main&quot;);
     let option = bar.option;
