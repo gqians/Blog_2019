@@ -7,20 +7,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.qds.ink">
-  <title>webpack arcgis api for js | QH|Blog</title>
+  <title>可视化排序（一） | QH|Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;将arcgis api for js 与webpack结合起来对于我来说确实比较难，但其中dojo也要承担大部分的责任。arcgis api for js采用dojo进行开发，但我感觉dojo也快不行了，在webpack中水土不服。估计Esri也感觉不好意思，开发了esri-loader来进行辅助。这里采用的也是esri-loader。">
-<meta name="keywords" content="webpack,webgis">
+  <meta name="description" content="一.大体介绍使用的排序算法包含冒泡排序，选择排序，插入排序，归并排序，快速排序，堆排序，使用echart实现部分排序的可视化排序过程，因为部分排序方法可视化太复杂。二.冒泡排序1.冒泡排序的主要思想是通过二重for循环，循环比较相邻两项，按照统一的大小排列顺序进行交换位置，性能较差，复杂度为      O(n^2)。2.代码实现1）可视化方面选用echart的柱状图。2）因为要将每一个排序后的数组">
+<meta name="keywords" content="可视化,js,排序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="webpack arcgis api for js">
-<meta property="og:url" content="http://www.qds.ink/2019/03/18/webpack-arcgis-api-for-js/index.html">
+<meta property="og:title" content="可视化排序（一）">
+<meta property="og:url" content="http://www.qds.ink/2019/06/11/可视化排序（一）/index.html">
 <meta property="og:site_name" content="QH|Blog">
-<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;将arcgis api for js 与webpack结合起来对于我来说确实比较难，但其中dojo也要承担大部分的责任。arcgis api for js采用dojo进行开发，但我感觉dojo也快不行了，在webpack中水土不服。估计Esri也感觉不好意思，开发了esri-loader来进行辅助。这里采用的也是esri-loader。">
+<meta property="og:description" content="一.大体介绍使用的排序算法包含冒泡排序，选择排序，插入排序，归并排序，快速排序，堆排序，使用echart实现部分排序的可视化排序过程，因为部分排序方法可视化太复杂。二.冒泡排序1.冒泡排序的主要思想是通过二重for循环，循环比较相邻两项，按照统一的大小排列顺序进行交换位置，性能较差，复杂度为      O(n^2)。2.代码实现1）可视化方面选用echart的柱状图。2）因为要将每一个排序后的数组">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-18T04:25:33.312Z">
+<meta property="og:image" content="http://www.qds.ink/img/js/maopao.gif">
+<meta property="og:image" content="http://www.qds.ink/img/js/selection.gif">
+<meta property="og:image" content="http://www.qds.ink/img/js/insertion.gif">
+<meta property="og:updated_time" content="2019-06-12T02:45:08.419Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack arcgis api for js">
-<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;将arcgis api for js 与webpack结合起来对于我来说确实比较难，但其中dojo也要承担大部分的责任。arcgis api for js采用dojo进行开发，但我感觉dojo也快不行了，在webpack中水土不服。估计Esri也感觉不好意思，开发了esri-loader来进行辅助。这里采用的也是esri-loader。">
+<meta name="twitter:title" content="可视化排序（一）">
+<meta name="twitter:description" content="一.大体介绍使用的排序算法包含冒泡排序，选择排序，插入排序，归并排序，快速排序，堆排序，使用echart实现部分排序的可视化排序过程，因为部分排序方法可视化太复杂。二.冒泡排序1.冒泡排序的主要思想是通过二重for循环，循环比较相邻两项，按照统一的大小排列顺序进行交换位置，性能较差，复杂度为      O(n^2)。2.代码实现1）可视化方面选用echart的柱状图。2）因为要将每一个排序后的数组">
+<meta name="twitter:image" content="http://www.qds.ink/img/js/maopao.gif">
   
   
     <link rel="icon" href="/favicon.png">
@@ -151,118 +155,80 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-webpack-arcgis-api-for-js" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-可视化排序（一）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      webpack arcgis api for js
+      可视化排序（一）
     </h1>
   
 
         
-        <a href="/2019/03/18/webpack-arcgis-api-for-js/" class="archive-article-date">
-  	<time datetime="2019-03-18T02:14:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-18</time>
+        <a href="/2019/06/11/可视化排序（一）/" class="archive-article-date">
+  	<time datetime="2019-06-11T15:28:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;将arcgis api for js 与webpack结合起来对于我来说确实比较难，但其中dojo也要承担大部分的责任。arcgis api for js采用dojo进行开发，但我感觉dojo也快不行了，在webpack中水土不服。估计Esri也感觉不好意思，开发了esri-loader来进行辅助。这里采用的也是esri-loader。<br><a id="more"></a></p>
-<h2 id="一-使用步骤"><a href="#一-使用步骤" class="headerlink" title="一.使用步骤"></a>一.使用步骤</h2><h3 id="1-安装依赖包"><a href="#1-安装依赖包" class="headerlink" title="1.安装依赖包"></a>1.安装依赖包</h3><ul>
-<li>esri-loader(关键包)</li>
-<li>express(框架)</li>
-<li>http-proxy-middleware(node来处理跨域的包，究极好用)</li>
-<li><p>babel全家桶(处理es6代码)</p>
-<h3 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;在webpack的entry文件中导入esri-loader包。</p>
-<p> import esriLoader from ‘esri-loader’;<br>然后加载在线的js api和css文件，这里建议将js api 布置在本地，避免一些不必要的麻烦。关于将js api布置在本地可以参考这一篇博客：<a href="https://blog.csdn.net/qq_35117024/article/details/82633084" target="_blank" rel="noopener">本地部署</a>。部署完了可以参考以下代码加载</p>
-<p> esriLoader.loadCss(‘<a href="http://127.0.0.1:3001/arcgis_js_api/library/4.9/esri/css/main.css&#39;)" target="_blank" rel="noopener">http://127.0.0.1:3001/arcgis_js_api/library/4.9/esri/css/main.css&#39;)</a>;<br> const options = {<br>  url:’<a href="http://127.0.0.1:3001/arcgis_js_api/library/4.9/dojo/dojo.js&#39;" target="_blank" rel="noopener">http://127.0.0.1:3001/arcgis_js_api/library/4.9/dojo/dojo.js&#39;</a><br> };<br>加载完毕后就可以进行开发了。</p>
-<h3 id="3-开发"><a href="#3-开发" class="headerlink" title="3.开发"></a>3.开发</h3><h4 id="3-1-js部分代码"><a href="#3-1-js部分代码" class="headerlink" title="3.1 js部分代码"></a>3.1 js部分代码</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;代码如下：</p>
-</li>
-</ul>
-<pre><code>&gt;加载函数
-&gt;esriLoader.loadModules([
-    &quot;esri/Map&quot;,
-    &quot;esri/Ground&quot;,
-    &quot;esri/layers/ElevationLayer&quot;,
-    &quot;esri/config&quot;,
-    &quot;esri/views/SceneView&quot;,
-    &quot;esri/geometry/Extent&quot;,
-    &quot;dojo/domReady&quot;],options)
-    .then(([Map,Ground,ElevationLayer,esriConfig,SceneView,Extent]) =&gt; {
-        esriConfig.request.corsEnabledServers.push(&quot;localhost:6080&quot;);//设   置地图服务器已允许跨域
-        var customElevation = ElevationLayer({
-            url: &quot;http://localhost:6080/arcgis/rest/services//SiChuan/suining/MapServer&quot;
-        });
-        var map = new Map({
-            // basemap: &quot;streets&quot;,//ESRI提供的底 图
-            basemap: &quot;hybrid&quot;,//ESRI提供的影像图
-            //  ground: &quot;world-elevation&quot;//ESRI提供的全球地形
-            ground: new Ground({
-                layers: [ customElevation ]
-            })
-        });
-        var view=new SceneView({
-            map:map,
-            container: &quot;viewDiv&quot;
-        });
-        view.ui.remove(&quot;attribution&quot;);//移除底部ESRI logo
-        view.when(function () {
-            view.goTo({
-                position: {
-                    x: 113.642578125,
-                    y: 34.7222900390625,
-                    z: 700,
-                    spatialReference: {
-                        wkid: 4326
-                    }
-                },
-                heading: 50,
-                tilt: 80
-            }, {
-                speedFactor: 0.7
-            });
-        }).catch(function (reason) {
-            console.log(reason)
-    })
-}).catch(err =&gt; {
-// handle any script or module loading errors
-console.error(err);
-});
-</code></pre><p>可以看出它的使用代码和原始的使用方法差不多，只是有一些加载上的不同。然后就可以愉快的打包了。</p>
-<h4 id="3-2-html部分代码"><a href="#3-2-html部分代码" class="headerlink" title="3.2 html部分代码"></a>3.2 html部分代码</h4><pre><code>&gt; &lt;!DOCTYPE html&gt;
-&gt; &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
-&lt;head&gt;
-&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;/&gt;
-    &lt;title&gt;第一个地图应用&lt;/title&gt;
-    &lt;style&gt;
-    html,
-    body,
-    #viewDiv {
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;script src=&quot;/javascripts/bundle.js&quot;&gt;&lt;/script&gt;
-    &lt;div id=&quot;viewDiv&quot; &gt;
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>Tips:注意这里的id和css代码，别搞错了。bundle.js是打包生成的文件，要放在boby标签里。</p>
-<h4 id="3-3-关于跨域的问题"><a href="#3-3-关于跨域的问题" class="headerlink" title="3.3 关于跨域的问题"></a>3.3 关于跨域的问题</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;我开始也是想在布置本地api的时候就按照网上的解决方法设置跨域，但弄了很久，经历了从入门到放弃。然后决定直接在后端进行转发，而使用node.js的express的中间件http-proxy-middleware就十分方便了。这个中间件的用处十分强大，在这里就只使用它的一小部分功能。</p>
-<pre><code>let app = express();
-let proxy = require(&apos;http-proxy-middleware&apos;);
-let apiProxyJs = proxy({target: &apos;http://192.168.0.104/&apos;,changeOrigin : true});
-app.use(&apos;/arcgis_js_api&apos;, apiProxyJs);
-</code></pre><p>大概意思就是请求的url里面路径是’/arcgis_js_api’开头的，都改变它的主机。我这里就的http请求是’<a href="http://127.0.0.1:3001/arcgis_js_api/library/4.9/dojo/dojo.js&#39;，经过转发就是&#39;http://http://192.168.0.104/arcgis_js_api/library/4.9/dojo/dojo.js&#39;。使用的时候要变成自己的路径。" target="_blank" rel="noopener">http://127.0.0.1:3001/arcgis_js_api/library/4.9/dojo/dojo.js&#39;，经过转发就是&#39;http://http://192.168.0.104/arcgis_js_api/library/4.9/dojo/dojo.js&#39;。使用的时候要变成自己的路径。</a><br>(完结撒花)</p>
+        <h3 id="一-大体介绍"><a href="#一-大体介绍" class="headerlink" title="一.大体介绍"></a>一.大体介绍</h3><h4 id="使用的排序算法包含冒泡排序，选择排序，插入排序，归并排序，快速排序，堆排序，使用echart实现部分排序的可视化排序过程，因为部分排序方法可视化太复杂。"><a href="#使用的排序算法包含冒泡排序，选择排序，插入排序，归并排序，快速排序，堆排序，使用echart实现部分排序的可视化排序过程，因为部分排序方法可视化太复杂。" class="headerlink" title="使用的排序算法包含冒泡排序，选择排序，插入排序，归并排序，快速排序，堆排序，使用echart实现部分排序的可视化排序过程，因为部分排序方法可视化太复杂。"></a>使用的排序算法包含冒泡排序，选择排序，插入排序，归并排序，快速排序，堆排序，使用echart实现部分排序的可视化排序过程，因为部分排序方法可视化太复杂。</h4><h3 id="二-冒泡排序"><a href="#二-冒泡排序" class="headerlink" title="二.冒泡排序"></a>二.冒泡排序</h3><h4 id="1-冒泡排序的主要思想是通过二重for循环，循环比较相邻两项，按照统一的大小排列顺序进行交换位置，性能较差，复杂度为-O-n-2-。"><a href="#1-冒泡排序的主要思想是通过二重for循环，循环比较相邻两项，按照统一的大小排列顺序进行交换位置，性能较差，复杂度为-O-n-2-。" class="headerlink" title="1.冒泡排序的主要思想是通过二重for循环，循环比较相邻两项，按照统一的大小排列顺序进行交换位置，性能较差，复杂度为      O(n^2)。"></a>1.冒泡排序的主要思想是通过二重for循环，循环比较相邻两项，按照统一的大小排列顺序进行交换位置，性能较差，复杂度为      O(n^2)。</h4><h4 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2.代码实现"></a>2.代码实现</h4><h5 id="1）可视化方面选用echart的柱状图。"><a href="#1）可视化方面选用echart的柱状图。" class="headerlink" title="1）可视化方面选用echart的柱状图。"></a>1）可视化方面选用echart的柱状图。</h5><h5 id="2）因为要将每一个排序后的数组状态保存下来，形成一个动态的动画效果，就可以使用Generator和yield配合setInterval来进行实现。"><a href="#2）因为要将每一个排序后的数组状态保存下来，形成一个动态的动画效果，就可以使用Generator和yield配合setInterval来进行实现。" class="headerlink" title="2）因为要将每一个排序后的数组状态保存下来，形成一个动态的动画效果，就可以使用Generator和yield配合setInterval来进行实现。"></a>2）因为要将每一个排序后的数组状态保存下来，形成一个动态的动画效果，就可以使用Generator和yield配合setInterval来进行实现。</h5><h4 id="3-动图展示"><a href="#3-动图展示" class="headerlink" title="3.动图展示"></a>3.动图展示</h4><p><img src="\img\js\maopao.gif" alt="图1"></p>
+<h4 id="4-部分代码"><a href="#4-部分代码" class="headerlink" title="4.部分代码"></a>4.部分代码</h4><p>使用的vue框架，完整代码在 <a href="https://github.com/Qian4321/sort-v" target="_blank" rel="noopener">https://github.com/Qian4321/sort-v</a><br>    const bubble = function* (array) {<br>      let length = array.length;<br>      for (let i = 0; i &lt; length; i++) {<br>        for (let j = 0; j &lt; length - 1-i; j++) {<br>          if (array[j] &gt; array[j + 1]) {<br>            [array[j], array[j + 1]] = [array[j + 1], array[j]];<br>            yield array;<br>          }<br>        }<br>      }<br>    }<br>    export default bubble;<br>调用代码：</p>
+<pre><code>bubble_click(){
+    let chart = bar.myChart(&quot;main&quot;);
+    let option = bar.option;
+    let array = bubble([60, 89, 23, 78, 36,42,72,19,49,73,48]);
+    let arr;
+    option.title.text = &quot;冒泡排序&quot;;
+   let dosort= setInterval(() =&gt; {
+     arr = array.next();
+     if (arr.done == true) {
+       clearInterval(dosort);
+       return;
+     }
+     option.xAxis.data = arr.value;
+     option.series[0].data = arr.value;
+     chart.setOption(option);
 
+   }, 500)
+  }
+</code></pre><h3 id="三-选择排序"><a href="#三-选择排序" class="headerlink" title="三.选择排序"></a>三.选择排序</h3><h4 id="1-选择排序主要思想也是通过双层for循环，与冒泡不同的是他不会将相邻的项交换位置，而是直接间接交换最大值或最小值到指定的位置。复杂度也是O-n-2-。"><a href="#1-选择排序主要思想也是通过双层for循环，与冒泡不同的是他不会将相邻的项交换位置，而是直接间接交换最大值或最小值到指定的位置。复杂度也是O-n-2-。" class="headerlink" title="1.选择排序主要思想也是通过双层for循环，与冒泡不同的是他不会将相邻的项交换位置，而是直接间接交换最大值或最小值到指定的位置。复杂度也是O(n^2)。"></a>1.选择排序主要思想也是通过双层for循环，与冒泡不同的是他不会将相邻的项交换位置，而是直接间接交换最大值或最小值到指定的位置。复杂度也是O(n^2)。</h4><h4 id="2-代码实现-1"><a href="#2-代码实现-1" class="headerlink" title="2.代码实现"></a>2.代码实现</h4><h5 id="与冒泡类似"><a href="#与冒泡类似" class="headerlink" title="与冒泡类似"></a>与冒泡类似</h5><h4 id="3-动图展示-1"><a href="#3-动图展示-1" class="headerlink" title="3.动图展示"></a>3.动图展示</h4><p><img src="\img\js\selection.gif" alt="图2"></p>
+<h4 id="4-部分代码-1"><a href="#4-部分代码-1" class="headerlink" title="4.部分代码"></a>4.部分代码</h4><pre><code>const selection = function* (array) {
+  let length = array.length;
+  for (let i = 0; i &lt; length - 1; i++) {
+    let max = array[0];
+    let index = 0;
+    for (let j = 1; j &lt;= length - 1 - i; j++) {
+      if (array[j] &gt; max) {
+        max = array[j];
+        index = j;
+      }
+    }
+    [array[index], array[length - 1 - i]] = [array[length - 1 - i], array[index]];
+    yield array;
+  }
+}
+export default selection;
+</code></pre><h3 id="四-插入排序"><a href="#四-插入排序" class="headerlink" title="四.插入排序"></a>四.插入排序</h3><h4 id="1-插入排序主要是将数组第一位看成是已经排序好的，然后将后面的项插入到已经排列好的序列中。性能比冒泡和选择要好。"><a href="#1-插入排序主要是将数组第一位看成是已经排序好的，然后将后面的项插入到已经排列好的序列中。性能比冒泡和选择要好。" class="headerlink" title="1.插入排序主要是将数组第一位看成是已经排序好的，然后将后面的项插入到已经排列好的序列中。性能比冒泡和选择要好。"></a>1.插入排序主要是将数组第一位看成是已经排序好的，然后将后面的项插入到已经排列好的序列中。性能比冒泡和选择要好。</h4><h4 id="2-动图展示"><a href="#2-动图展示" class="headerlink" title="2.动图展示"></a>2.动图展示</h4><p><img src="\img\js\insertion.gif" alt="图3"></p>
+<h4 id="3-部分代码"><a href="#3-部分代码" class="headerlink" title="3.部分代码"></a>3.部分代码</h4><pre><code>const insertion = function* (array) {
+  let length = array.length,
+      j, temp;
+  for (let i = 1; i &lt; length; i++) {
+    j = i;
+    temp = array[i];
+    while (j &gt; 0 &amp;&amp; temp &lt; array[j - 1]) {
+      array[j] = array[j - 1];
+      j--;
+    }
+    array[j] = temp;
+    yield array;
+  }
+}
+export default insertion;
+</code></pre>
       
 
       
@@ -301,11 +267,15 @@ app.use(&apos;/arcgis_js_api&apos;, apiProxyJs);
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">可视化</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">webgis</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
         		</li>
       		
 		</ul>
@@ -317,7 +287,7 @@ app.use(&apos;/arcgis_js_api&apos;, apiProxyJs);
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/arcgis-api-for-js//" class="article-tag-list-link color3">arcgis api for js</a>
+        			<a href="/categories/javascript-es6//" class="article-tag-list-link color5">javascript&es6</a>
         		</li>
       		
 		</ul>
@@ -372,7 +342,7 @@ app.use(&apos;/arcgis_js_api&apos;, apiProxyJs);
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.qds.ink/2019/03/18/webpack-arcgis-api-for-js/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.qds.ink/2019/06/11/可视化排序（一）/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -386,18 +356,9 @@ app.use(&apos;/arcgis_js_api&apos;, apiProxyJs);
   
 <nav id="article-nav">
   
-    <a href="/2019/04/26/js阶段学习（一）/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          js阶段学习（一）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/03/17/我/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我</div>
+    <a href="/2019/05/07/js数据结构-字典和散列表/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js数据结构-字典和散列表</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -436,7 +397,7 @@ app.use(&apos;/arcgis_js_api&apos;, apiProxyJs);
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://www.qds.ink/2019/03/18/webpack-arcgis-api-for-js/",
+  id: "http://www.qds.ink/2019/06/11/可视化排序（一）/",
   owner: 'Qian4321',
   repo: 'Storage-review',
   oauth: {
