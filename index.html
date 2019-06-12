@@ -148,6 +148,168 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-可视化排序（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/12/可视化排序（二）/">可视化排序（二）</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/12/可视化排序（二）/" class="archive-article-date">
+  	<time datetime="2019-06-12T02:59:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一-归并排序"><a href="#一-归并排序" class="headerlink" title="一.归并排序"></a>一.归并排序</h3><h4 id="1-归并排序相交于前面的排序都要复杂一些，但是他是可是在实际中被使用的排序方法。归并排序的主要思想是通过递归将数组切分到足够小，比较后交换位置后再进行合并。"><a href="#1-归并排序相交于前面的排序都要复杂一些，但是他是可是在实际中被使用的排序方法。归并排序的主要思想是通过递归将数组切分到足够小，比较后交换位置后再进行合并。" class="headerlink" title="1.归并排序相交于前面的排序都要复杂一些，但是他是可是在实际中被使用的排序方法。归并排序的主要思想是通过递归将数组切分到足够小，比较后交换位置后再进行合并。"></a>1.归并排序相交于前面的排序都要复杂一些，但是他是可是在实际中被使用的排序方法。归并排序的主要思想是通过递归将数组切分到足够小，比较后交换位置后再进行合并。</h4><h4 id="2-部分代码"><a href="#2-部分代码" class="headerlink" title="2.部分代码"></a>2.部分代码</h4><pre><code>const mergesort = function* (array) {
+  yield mergeSortRec(array);
+}
+///递归函数，将数组切割到足够小
+const mergeSortRec = (array)=&gt;{
+  let length = array.length;
+  if (length === 1) {
+    return array;
+  }
+  let mid = Math.floor(length / 2),
+    left = array.slice(0, mid),
+    right = array.slice(mid, length);
+    return merge(mergeSortRec(left), mergeSortRec(right));
+}
+//比较左右两边数组，然后合并在一起
+const merge = (left,right) =&gt; {
+  let result = [],
+    il = 0,
+    ir = 0;
+  while (il &lt; left.length &amp;&amp; ir &lt; right.length) {
+    if (left[il] &lt; right[ir]) {
+      result.push(left[il++]);
+    } else {
+      result.push(right[ir++]);
+    }
+  }
+  while (il &lt; left.length) {
+    result.push(left[il++]);
+  }
+  while (ir &lt; right.length) {
+    result.push(right[ir++]);
+  }
+  return result;
+}
+export default mergesort;
+</code></pre><h3 id="二-快速排序"><a href="#二-快速排序" class="headerlink" title="二.快速排序"></a>二.快速排序</h3><h4 id="1-快速排序是性能很好的排序算法了，它的主要思想类似于归并排序，但它只是在理论上切割数组，实际数组并没有被切割。最开始找到中间一个点作为主元，然后将比这个主元大的放在右边，比主元小的放在左边，这是左边和右边便可递归看成两个数组重复这个过程，切分到足够小就可以将数组的每一个元素从小到大的排列出来。"><a href="#1-快速排序是性能很好的排序算法了，它的主要思想类似于归并排序，但它只是在理论上切割数组，实际数组并没有被切割。最开始找到中间一个点作为主元，然后将比这个主元大的放在右边，比主元小的放在左边，这是左边和右边便可递归看成两个数组重复这个过程，切分到足够小就可以将数组的每一个元素从小到大的排列出来。" class="headerlink" title="1.快速排序是性能很好的排序算法了，它的主要思想类似于归并排序，但它只是在理论上切割数组，实际数组并没有被切割。最开始找到中间一个点作为主元，然后将比这个主元大的放在右边，比主元小的放在左边，这是左边和右边便可递归看成两个数组重复这个过程，切分到足够小就可以将数组的每一个元素从小到大的排列出来。"></a>1.快速排序是性能很好的排序算法了，它的主要思想类似于归并排序，但它只是在理论上切割数组，实际数组并没有被切割。最开始找到中间一个点作为主元，然后将比这个主元大的放在右边，比主元小的放在左边，这是左边和右边便可递归看成两个数组重复这个过程，切分到足够小就可以将数组的每一个元素从小到大的排列出来。</h4><h4 id="2-动图展示"><a href="#2-动图展示" class="headerlink" title="2.动图展示"></a>2.动图展示</h4><p><img src="\img\js\quick.gif" alt="图1"></p>
+<h4 id="3-部分代码"><a href="#3-部分代码" class="headerlink" title="3.部分代码"></a>3.部分代码</h4><pre><code>const quick = function *(array, left, right) {
+  let index;
+  if (array.length &gt; 1) {
+    index = partition(array, left, right);//返回特定值，将左边划分为小于基准点，右边大于基准点
+    if (left &lt; index - 1) {
+      yield array
+      yield* quick(array, left, index - 1);//递归需使用yeild*
+    }
+    if (index &lt; right) {
+      yield array
+      yield* quick(array, index, right);
+    }
+  }
+}
+const partition = (array, left, right)=&gt; {
+  let pivot = array[Math.floor((right + left) / 2)],//寻找基准点
+    i = left,
+    j = right;
+  while (i &lt;= j) {
+    while (array[i] &lt; pivot) {//从左边寻找大于基准点的值
+      i++;
+    }
+    while (array[j] &gt; pivot) {
+      j--;
+    }
+    if (i &lt;= j) {
+      [array[i], array[j]] = [array[j], array[i]];
+      i++;
+      j--;
+    }
+  }
+  return i;
+}
+export default quick;
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">可视化</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/javascript-es6//" class="article-tag-list-link color5">javascript&es6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/12/可视化排序（二）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-可视化排序（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -993,102 +1155,10 @@
 
 
   
-    <article id="post-R语言空间信息挖掘（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/15/R语言空间信息挖掘（一）/">R语言空间信息挖掘（一）</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/15/R语言空间信息挖掘（一）/" class="archive-article-date">
-  	<time datetime="2019-03-15T12:34:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一-R语言空间信息挖掘简介"><a href="#一-R语言空间信息挖掘简介" class="headerlink" title="一.R语言空间信息挖掘简介"></a>一.R语言空间信息挖掘简介</h2><pre><code>R系统是一款基于统计计算和绘图的免费软件。R系统提供了许多标准的和创新的统计分析方法。在过去的10年，R语言拥有越来越多用于处理和分析空间数据的包。其中一组R开发者实现了R包sp,它新增的用于空间数据的类和方法扩展了R的功能。sp包提供了点、线、多边形和网格的类和方法，采用单组空间数据类有许多重要的优势。本实验就是基于sp包进行。
-</code></pre>
-        
-          <a class="article-more-a" href="/2019/03/15/R语言空间信息挖掘（一）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">R语言</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据挖掘</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">gis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/R语言空间信息挖掘//" class="article-tag-list-link color5">R语言空间信息挖掘</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/15/R语言空间信息挖掘（一）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
