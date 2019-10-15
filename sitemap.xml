@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.qds.ink/2019/10/15/10-15-2019/</loc>
+    
+    <lastmod>2019-10-15T14:00:31.853Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.qds.ink/2019/10/14/%E6%88%91%E7%9A%84webpack%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
     
-    <lastmod>2019-10-15T12:16:35.018Z</lastmod>
+    <lastmod>2019-10-15T12:25:06.276Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.qds.ink/2019/03/17/%E6%88%91/</loc>
+    
+    <lastmod>2019-10-15T12:22:25.045Z</lastmod>
     
   </url>
   
@@ -47,13 +61,6 @@
     <loc>http://www.qds.ink/2019/04/26/js%E9%98%B6%E6%AE%B5%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
     
     <lastmod>2019-04-28T01:02:26.222Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.qds.ink/2019/03/17/%E6%88%91/</loc>
-    
-    <lastmod>2019-03-18T14:45:07.251Z</lastmod>
     
   </url>
   
