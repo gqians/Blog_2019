@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="QH|Blog">
 <meta property="og:description" content="一.webpack的常用配置1.entry和output     module.exports={       entry:&apos;./src/index.js&apos;,       output:{         path:path.resolve(__dirname,&apos;dist&apos;),         filename:&apos;bundle[hash:6].js&apos;,         publicPath:&apos;ht">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-15T11:59:40.473Z">
+<meta property="og:updated_time" content="2019-10-15T12:07:31.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的webpack学习（一）">
 <meta name="twitter:description" content="一.webpack的常用配置1.entry和output     module.exports={       entry:&apos;./src/index.js&apos;,       output:{         path:path.resolve(__dirname,&apos;dist&apos;),         filename:&apos;bundle[hash:6].js&apos;,         publicPath:&apos;ht">
@@ -184,26 +184,30 @@
 
 <p><span style="color:#FFB74D">&emsp;&emsp;其中entry是需要打包的文件路径，可以提供多个路径，但提供多个入口路径时，在output的输出打包文件时需要使用占位符来确保每个文件不一样。<br></span></p>
 <a id="more"></a>
-<h4 id="2-mode"><a href="#2-mode" class="headerlink" title="2.mode"></a>2.mode</h4><p><span style="color:#FFB74D">&emsp;&emsp;mode主要是来表明当前软件处于开发环境还是生产环境。在开发环境中可以使用devtool来进行代码的debug，可以使用webpack-dev-server开启本地便捷服务器和热替换模块。在生产环境中就将mode更改为production,在生产环境中会默认开启一些插件之类得东西，比如tree-shaking需要使用的UglifyJsPlugin插件和optimization.usedExports，同时设置配置optimization选项，设置usedExports和sideEffects为true。大概配置如下：<br>    <pre style="background-color:#E1F5FE;color:#01579B"><br>    // webpack.config.js</pre></span></p>
-<pre><code>const UglifyJsPlugin = require(&apos;uglifyjs-webpack-plugin&apos;);
-const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;);
+<h4 id="2-mode"><a href="#2-mode" class="headerlink" title="2.mode"></a>2.mode</h4><p><span style="color:#FFB74D">&emsp;&emsp;mode主要是来表明当前软件处于开发环境还是生产环境。在开发环境中可以使用devtool来进行代码的debug，可以使用webpack-dev-server开启本地便捷服务器和热替换模块。在生产环境中就将mode更改为production,在生产环境中会默认开启一些插件之类得东西，比如tree-shaking需要使用的UglifyJsPlugin插件和optimization.usedExports，同时设置配置optimization选项，设置usedExports和sideEffects为true。大概配置如下：</span></p>
+<pre style="background-color:#E1F5FE;color:#01579B">
+    // webpack.config.js
 
-module.exports = {
-    mode: &apos;none&apos;,
-    optimization: {
-        minimize: true,
-        minimizer: [
-            new UglifyJsPlugin()
-        ],
-        usedExports: true,
-        sideEffects: true
-    },
-    plugins: [
-        new HtmlWebpackPlugin()
-    ]
-}
-&lt;/pre&gt;
-</code></pre><p><br><span></span><br>qqqq</p>
+    const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+    const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+    module.exports = {
+        mode: 'none',
+        optimization: {
+            minimize: true,
+            minimizer: [
+                new UglifyJsPlugin()
+            ],
+            usedExports: true,
+            sideEffects: true
+        },
+        plugins: [
+            new HtmlWebpackPlugin()
+        ]
+    }
+</pre>
+
+<p></p>
 <h4 id="3-modules"><a href="#3-modules" class="headerlink" title="3.modules"></a>3.modules</h4><p><span style="color:#FFB74D">&emsp;&emsp;modules主要是提供各种loader来对各种非Js模块来进行解析，常用的loader包括:<br>  <ol style="color:#CDDC39"><br>    <li><br>       babel-loader:主要是用来将es6等代码转换为浏览器可识别的代码。<br>    </li><br>    <li><br>       css-loader,style-loader:来打包css文件<br>    </li><br>    <li><br>       file-loader:用来打包图片啊，啥的。<br>    </li><br>    <li><br>       saxx-loader,scss-loader:打包css预处理器<br>    </li><br>  </ol><br></span></p>
 <h4 id="4-plugins"><a href="#4-plugins" class="headerlink" title="4.plugins"></a>4.plugins</h4><p><span style="color:#FFB74D">&emsp;&emsp;插件可以看做loader的加强版，用法大概是：</span></p>
 <pre style="background-color:#E1F5FE;color:#01579B">
