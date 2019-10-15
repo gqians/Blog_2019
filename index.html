@@ -168,14 +168,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h4><p><span style="color:#311B92"><br>&emsp;&emsp;在几次校招的铩羽而归时，逐渐明白了自己身上存在的问题——沟通与说话的逻辑。这个是几个面试官明确告诉我的缺点，也是秋招收获最大的东西了。在秋招如此严峻的情况下，才发现学历与经验和在校经历其实是蛮重要的。就好像每年评奖学金，不单单只看成绩，德育分的占比也是很重要的。然后也咨询了面试官，说写博客可以锻炼自己的表达逻辑能力，所以也趁着这个时机把自己遗忘了三个多月的博客运营起来。也决定以后每天必须总结当天的事情与感受。<br></span></p>
-<h4 id="10-15-2019"><a href="#10-15-2019" class="headerlink" title="10/15/2019"></a>10/15/2019</h4><p><span style="color:#311B92"><br>&emsp;&emsp;今天决定放弃秋招，开启实习之旅。其实本来还打算继续开始征战秋招的，但是真的很累。而且以目前的我的实力来说，确实也不配被秋招到好公司。今天在微信上和当时面试我的面试官聊天，也更加坚定我去他那里实习的想法。因为他是为数不多的肯定我的面试官之一，其实还是蛮感谢他的。他在微信上让我学一些技术，还是蛮让我意外的，意外的是他的信任。明天开始就学新技术了。终于不用天天看面试攻略了，快吐了。<br>希望再小，也值得尝试。</span></p>
-<p></p>
-<div style="text-align:center"><br>  <image src="\img\随笔\2019\10\15.jpg" style="width:75vw;height:85vw"><br></image></div>
+        <h4 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h4><p><span style="color:#311B92"><br>&emsp;&emsp;在几次校招的铩羽而归时，逐渐明白了自己身上存在的问题——沟通与说话的逻辑。这个是几个面试官明确告诉我的缺点，也是秋招收获最大的东西了。在秋招如此严峻的情况下，才发现学历与经验和在校经历其实是蛮重要的。就好像每年评奖学金，不单单只看成绩，德育分的占比也是很重要的。然后也咨询了面试官，说写博客可以锻炼自己的表达逻辑能力，所以也趁着这个时机把自己遗忘了三个多月的博客运营起来。也决定以后每天必须总结当天的事情与感受。<br></span><br>
+        
+          <a class="article-more-a" href="/2019/10/15/10-15-2019/#more">more >></a>
+        
       
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -377,42 +377,10 @@ const merge = (left,right) =&gt; {
   return result;
 }
 export default mergesort;
-</code></pre><h3 id="二-快速排序"><a href="#二-快速排序" class="headerlink" title="二.快速排序"></a>二.快速排序</h3><h4 id="1-快速排序是性能很好的排序算法了，它的主要思想类似于归并排序，但它只是在理论上切割数组，实际数组并没有被切割。最开始找到中间一个点作为主元，然后将比这个主元大的放在右边，比主元小的放在左边，这是左边和右边便可递归看成两个数组重复这个过程，切分到足够小就可以将数组的每一个元素从小到大的排列出来。"><a href="#1-快速排序是性能很好的排序算法了，它的主要思想类似于归并排序，但它只是在理论上切割数组，实际数组并没有被切割。最开始找到中间一个点作为主元，然后将比这个主元大的放在右边，比主元小的放在左边，这是左边和右边便可递归看成两个数组重复这个过程，切分到足够小就可以将数组的每一个元素从小到大的排列出来。" class="headerlink" title="1.快速排序是性能很好的排序算法了，它的主要思想类似于归并排序，但它只是在理论上切割数组，实际数组并没有被切割。最开始找到中间一个点作为主元，然后将比这个主元大的放在右边，比主元小的放在左边，这是左边和右边便可递归看成两个数组重复这个过程，切分到足够小就可以将数组的每一个元素从小到大的排列出来。"></a>1.快速排序是性能很好的排序算法了，它的主要思想类似于归并排序，但它只是在理论上切割数组，实际数组并没有被切割。最开始找到中间一个点作为主元，然后将比这个主元大的放在右边，比主元小的放在左边，这是左边和右边便可递归看成两个数组重复这个过程，切分到足够小就可以将数组的每一个元素从小到大的排列出来。</h4><h4 id="2-动图展示"><a href="#2-动图展示" class="headerlink" title="2.动图展示"></a>2.动图展示</h4><p><img src="\img\js\quick.gif" alt="图1"></p>
-<h4 id="3-部分代码"><a href="#3-部分代码" class="headerlink" title="3.部分代码"></a>3.部分代码</h4><pre><code>const quick = function *(array, left, right) {
-  let index;
-  if (array.length &gt; 1) {
-    index = partition(array, left, right);//返回特定值，将左边划分为小于基准点，右边大于基准点
-    if (left &lt; index - 1) {
-      yield array
-      yield* quick(array, left, index - 1);//递归需使用yeild*
-    }
-    if (index &lt; right) {
-      yield array
-      yield* quick(array, index, right);
-    }
-  }
-}
-const partition = (array, left, right)=&gt; {
-  let pivot = array[Math.floor((right + left) / 2)],//寻找基准点
-    i = left,
-    j = right;
-  while (i &lt;= j) {
-    while (array[i] &lt; pivot) {//从左边寻找大于基准点的值
-      i++;
-    }
-    while (array[j] &gt; pivot) {
-      j--;
-    }
-    if (i &lt;= j) {
-      [array[i], array[j]] = [array[j], array[i]];
-      i++;
-      j--;
-    }
-  }
-  return i;
-}
-export default quick;
 </code></pre>
+        
+          <a class="article-more-a" href="/2019/06/12/可视化排序（二）/#more">more >></a>
+        
       
 
       
