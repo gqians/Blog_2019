@@ -148,6 +148,96 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-yarn的小总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/16/yarn的小总结/">yarn的小总结</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/16/yarn的小总结/" class="archive-article-date">
+  	<time datetime="2019-10-16T15:31:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-关于yarn"><a href="#1-关于yarn" class="headerlink" title="1.关于yarn"></a>1.关于yarn</h4><p><span style="color:#311B92"><br>&emsp;&emsp;npm和yarn的关系类似于Linux的rpm和yum,导致我在很长一段时间里将yarn记成了yum,脑残。yarn和yum都是帮助使用者处理包的依赖问题，yum的着重点在依赖包的下载，而yarn主要是处理依赖包的版本问题。yarn相对于npm的优势如下:</span></p>
+<p><ol style="color:#8E24AA"><br>  <li>速度快 ： 主要来自以下两个方面：<br>    <ul><br>        <li>并行安装：并行执行所有任务，提高了性能。<br>        </li><br>        <li>离线模式：如果之前已经安装过一个软件包，再次安装时直接从缓存中获取。<br>        </li><br>    <ul><br>  </ul></ul></li><br>  <li>安装版本统一：每一次拉取同一个项目依赖时，使用的都是一样的模块版本。<br>  </li><br>  <li>更简洁的输出： Yarn结合了 emoji直观且直接地打印出必要的信息，也提供了一些命令供开发者查询额外的安装信息。<br>  </li><br>  <li>多注册来源处理：所有的依赖包，不管他被不同的库间接关联引用多少次，安装这个包时，只会从一个注册来源去装，要么是 npm 要么是 bower, 防止出现混乱不一致。<br>  </li><br>  <li>更好的语义化： yarn改变了一些npm命令的名称，比如 yarn add/remove，感觉上比 npm 原本的 install/uninstall 要更清晰。<br>  </li><br></ol><br>总之，yarn很diao，快用ta。<br></p>
+<h4 id="2-yarn与npm的命令对比（来自http-www-fly63-com-article-detial-554）"><a href="#2-yarn与npm的命令对比（来自http-www-fly63-com-article-detial-554）" class="headerlink" title="2.yarn与npm的命令对比（来自http://www.fly63.com/article/detial/554）"></a>2.yarn与npm的命令对比（来自<a href="http://www.fly63.com/article/detial/554）" target="_blank" rel="noopener">http://www.fly63.com/article/detial/554）</a></h4><table width="100%"><thead><tr><th style="background-color:#673AB7">npm</th><th style="background-color:#673AB7">yarn</th></tr></thead><tbody><tr><td>npm install</td><td>yarn install</td></tr><tr><td>(N/A)</td><td>yarn install –flat</td></tr><tr><td>(N/A)</td><td>yarn install –har</td></tr><tr><td>(N/A)</td><td>yarn install –no-lockfile</td></tr><tr><td>(N/A)</td><td>yarn install –pure-lockfile</td></tr><tr><td>npm install [package]</td><td>(N/A)</td></tr><tr><td>npm install –save [package]</td><td>yarn add [package]</td></tr><tr><td>npm install –save-dev [package]</td><td>yarn add [package] [–dev/-D]</td></tr><tr><td>(N/A)</td><td>yarn add [package] [–peer/-P]</td></tr><tr><td>npm install –save-optional [package]</td><td>yarn add [package] [–optional/-O]</td></tr><tr><td>npm install –save-exact [package]</td><td>yarn add [package] [–exact/-E]</td></tr><tr><td>(N/A)</td><td>yarn add [package] [–tilde/-T]</td></tr><tr><td>npm install –global [package]</td><td>yarn global add [package]</td></tr><tr><td>npm rebuild</td><td>yarn install –force</td></tr><tr><td>npm uninstall [package]</td><td>(N/A)</td></tr><tr><td>npm uninstall –save [package]</td><td>yarn remove [package]</td></tr><tr><td>npm uninstall –save-dev [package]</td><td>yarn remove [package]</td></tr><tr><td>npm uninstall –save-optional [package]</td><td>yarn remove [package]</td></tr><tr><td>npm cache clean</td><td>yarn cache clean</td></tr><tr><td>rm -rf node_modules &amp;&amp; npm install</td><td>yarn upgrade</td></tr></tbody></table>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">yarn</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">npm</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/小技术//" class="article-tag-list-link color4">小技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/16/yarn的小总结/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-10-16-2019" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -469,11 +559,11 @@ export default mergesort;
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">可视化</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">可视化</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -564,11 +654,11 @@ export default mergesort;
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">可视化</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">可视化</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -987,97 +1077,6 @@ export default mergesort;
 
 
   
-    <article id="post-webpack-arcgis-api-for-js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/18/webpack-arcgis-api-for-js/">webpack arcgis api for js</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/18/webpack-arcgis-api-for-js/" class="archive-article-date">
-  	<time datetime="2019-03-18T02:14:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;将arcgis api for js 与webpack结合起来对于我来说确实比较难，但其中dojo也要承担大部分的责任。arcgis api for js采用dojo进行开发，但我感觉dojo也快不行了，在webpack中水土不服。估计Esri也感觉不好意思，开发了esri-loader来进行辅助。这里采用的也是esri-loader。<br>
-        
-          <a class="article-more-a" href="/2019/03/18/webpack-arcgis-api-for-js/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">webgis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/arcgis-api-for-js//" class="article-tag-list-link color3">arcgis api for js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/18/webpack-arcgis-api-for-js/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1191,6 +1190,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
@@ -1203,14 +1206,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
@@ -1220,6 +1215,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
             
             <div class="clearfix"></div>
