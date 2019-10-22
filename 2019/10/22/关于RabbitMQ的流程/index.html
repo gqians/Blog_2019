@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="QH|Blog">
 <meta property="og:description" content="1.基本概念&amp;emsp;&amp;emsp;RabbitMQ就类似于生产者与消费者之间的关系。生产者将数据放在一个队列中，RabbitMQ就会将其中的数据分给消费者。  2.过程">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-22T15:47:16.725Z">
+<meta property="og:updated_time" content="2019-10-22T15:49:18.628Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于RabbitMQ的流程">
 <meta name="twitter:description" content="1.基本概念&amp;emsp;&amp;emsp;RabbitMQ就类似于生产者与消费者之间的关系。生产者将数据放在一个队列中，RabbitMQ就会将其中的数据分给消费者。  2.过程">
@@ -180,7 +180,7 @@
 <p>二.接收消息<br>1.为了避免接收者先行，接收方也需要定义1、2、3步骤。<br>2.消息的发送是异步的，ch.consume添加回调函数进行数据的接收与处理。<br></p>
 <h4 id="3-其他"><a href="#3-其他" class="headerlink" title="3.其他"></a>3.其他</h4><p><span style="color:#311B92"><br>1.多个消费者(worker)：默认是将消息轮番送，也可以设置某一个worker可接受的最大数量，来达到负载均衡的效果。使用ch.prefetch(1)进行设置。<br>2.消息持久化：避免RabbitMQ挂掉数据不见，所以使用ch.assertQueue(‘hello’, {durable: true});进行消息持久化<br>3.消息确认：避免某一个worker挂掉数据不见，所以添加消息确认，让RabbitMQ接收到worker传送回的ack标识符才将其删除。</span></p>
 <p></p>
-<p>详情见<a href="https://www.cnblogs.com/cpselvis/p/6294986.html" target="_blank" rel="noopener"></a></p>
+<p>详情见<a href="https://www.cnblogs.com/cpselvis/p/6294986.html" target="_blank" rel="noopener">cpselvis的blog</a></p>
 
       
 
