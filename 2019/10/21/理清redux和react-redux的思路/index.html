@@ -7,19 +7,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.qds.ink">
-  <title>QH|Blog</title>
+  <title>理清redux和react-redux的思路 | QH|Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: 理清redux和react-redux的思路date: 2019-10-21 22:28:45tags: #定义标签    redux   react-reduxcategories: react #定义分类     1.流程&amp;emsp;&amp;emsp;首先redux是用来生成store的，react-redux是将store和context结合起来的生成connect()。在生成st">
+  <meta name="description" content="1.流程&amp;emsp;&amp;emsp;首先redux是用来生成store的，react-redux是将store和context结合起来的生成connect()。在生成store的时候，需要传入reducer函数,这个函数带有两个参数，一个是state另一个是action。这样做就可以在redux的createStore中生成三个函数，分别是获取state的函数getState(),改变state的函数">
+<meta name="keywords" content="redux,react-redux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="QH|Blog">
+<meta property="og:title" content="理清redux和react-redux的思路">
 <meta property="og:url" content="http://www.qds.ink/2019/10/21/理清redux和react-redux的思路/index.html">
 <meta property="og:site_name" content="QH|Blog">
-<meta property="og:description" content="title: 理清redux和react-redux的思路date: 2019-10-21 22:28:45tags: #定义标签    redux   react-reduxcategories: react #定义分类     1.流程&amp;emsp;&amp;emsp;首先redux是用来生成store的，react-redux是将store和context结合起来的生成connect()。在生成st">
+<meta property="og:description" content="1.流程&amp;emsp;&amp;emsp;首先redux是用来生成store的，react-redux是将store和context结合起来的生成connect()。在生成store的时候，需要传入reducer函数,这个函数带有两个参数，一个是state另一个是action。这样做就可以在redux的createStore中生成三个函数，分别是获取state的函数getState(),改变state的函数">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-21T16:00:15.842Z">
+<meta property="og:updated_time" content="2019-10-22T14:52:05.015Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="QH|Blog">
-<meta name="twitter:description" content="title: 理清redux和react-redux的思路date: 2019-10-21 22:28:45tags: #定义标签    redux   react-reduxcategories: react #定义分类     1.流程&amp;emsp;&amp;emsp;首先redux是用来生成store的，react-redux是将store和context结合起来的生成connect()。在生成st">
+<meta name="twitter:title" content="理清redux和react-redux的思路">
+<meta name="twitter:description" content="1.流程&amp;emsp;&amp;emsp;首先redux是用来生成store的，react-redux是将store和context结合起来的生成connect()。在生成store的时候，需要传入reducer函数,这个函数带有两个参数，一个是state另一个是action。这样做就可以在redux的createStore中生成三个函数，分别是获取state的函数getState(),改变state的函数">
   
   
     <link rel="icon" href="/favicon.png">
@@ -153,16 +154,24 @@
             <article id="post-理清redux和react-redux的思路" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      理清redux和react-redux的思路
+    </h1>
+  
+
+        
+        <a href="/2019/10/21/理清redux和react-redux的思路/" class="archive-article-date">
+  	<time datetime="2019-10-21T14:28:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p>title: 理清redux和react-redux的思路<br>date: 2019-10-21 22:28:45<br>tags: #定义标签  </p>
-<ul>
-<li>redux  </li>
-<li>react-redux<br>categories: react #定义分类  </li>
-</ul>
-<hr>
-<h3 id="1-流程"><a href="#1-流程" class="headerlink" title="1.流程"></a>1.流程</h3><p><span style="color:#311B92"><br>&emsp;&emsp;首先redux是用来生成store的，react-redux是将store和context结合起来的生成connect()。在生成store的时候，需要传入reducer函数,这个函数带有两个参数，一个是state另一个是action。这样做就可以在redux的createStore中生成三个函数，分别是获取state的函数getState(),改变state的函数dispatch({}),重新渲染页面的subscribe()。<br></span>  </p>
+        <h3 id="1-流程"><a href="#1-流程" class="headerlink" title="1.流程"></a>1.流程</h3><p><span style="color:#311B92"><br>&emsp;&emsp;首先redux是用来生成store的，react-redux是将store和context结合起来的生成connect()。在生成store的时候，需要传入reducer函数,这个函数带有两个参数，一个是state另一个是action。这样做就可以在redux的createStore中生成三个函数，分别是获取state的函数getState(),改变state的函数dispatch({}),重新渲染页面的subscribe()。<br></span>  </p>
 <h4 id="1-1-createStore"><a href="#1-1-createStore" class="headerlink" title="1.1 createStore()"></a>1.1 createStore()</h4><p><span style="color:#311B92"><br>大概实现：<br></span>  </p>
 <a id="more"></a>
 <pre style="background-color:#E1F5FE;color:#01579B">  
@@ -295,7 +304,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">react-redux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/react//" class="article-tag-list-link color1">react</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -556,6 +591,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">webgis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">react-redux</a>
               </li>
             
             <div class="clearfix"></div>
